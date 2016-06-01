@@ -2,12 +2,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.logic.hard.projecthardlogic.fragment.ReportListFragment">
 
     <ListView
         android:id="@+id/reportList"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></ListView>
+        android:layout_height="wrap_content"
+        android:layout_weight="4"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Uitloggen"
+        android:id="@+id/bt_logout"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_weight="0.5" />
 
 
 </LinearLayout>
