@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ListView;
 
 import com.logic.hard.projecthardlogic.R;
@@ -73,6 +74,14 @@ public class ReportListFragment extends Fragment {
 
         ReportAdapter adapter = new ReportAdapter(getActivity(), ReportModel.getInstance().getReportList());
         reportList.setAdapter(adapter);
+
+        Button bt_logout = (Button) rootView.findViewById(R.id.bt_logout);
+        bt_logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                return;
+            }
+        });
 
         return rootView;
     }
