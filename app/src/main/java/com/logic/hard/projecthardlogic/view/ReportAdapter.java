@@ -26,6 +26,8 @@ public class ReportAdapter extends ArrayAdapter<Report> {
         }
 
         TextView tvTitle = (TextView) convertView.findViewById(R.id.tv_report_title);
+        //tvTitle.setText("Sample");
+
         tvTitle.setText(getItem(position).getTitle());
 
         return convertView;

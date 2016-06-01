@@ -1,7 +1,9 @@
 package com.logic.hard.projecthardlogic.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +12,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.logic.hard.projecthardlogic.R;
+import com.logic.hard.projecthardlogic.activity.MainActivity;
+import com.logic.hard.projecthardlogic.activity.ReportListActivity;
 
 /**
  * Created by Vincent on 5/18/2016.
@@ -37,6 +41,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
         usernameET = (EditText) view.findViewById(R.id.et_username);
         passwordET = (EditText) view.findViewById(R.id.et_password);
         loginButton = (Button) view.findViewById(R.id.btn_login);
+        loginButton.setOnClickListener(this);
         return view;
     }
 
@@ -57,9 +62,11 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_login:
+                Log.v("BtnClick", "Login Button Clicked");
                 String username = usernameET.getText().toString();
                 String password = passwordET.getText().toString();
-                //getContext().startActivity();
+                Intent intent = new Intent(getActivity(), ReportListActivity.class);
+                startActivity(intent);
                 break;
             default:
                 //Something went wrong!

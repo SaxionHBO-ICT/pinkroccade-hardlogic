@@ -15,6 +15,11 @@ public class ReportModel {
 
     private ReportModel() {
         reports = new ArrayList<>();
+        int number = 0;
+        while (number < 30) {
+            reports.add(new Report("Report " + number));
+            number ++;
+        }
     }
 
     public ArrayList<Report> getReportList() {

@@ -69,7 +69,7 @@ public class ReportListFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.report_list_fragment, container, false);
-        reportList = (ListView) rootView.findViewById(R.id.tweetslist);
+        reportList = (ListView) rootView.findViewById(R.id.reportList);
 
         ReportAdapter adapter = new ReportAdapter(getActivity(), ReportModel.getInstance().getReportList());
         reportList.setAdapter(adapter);

@@ -15,6 +15,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name="com.logic.hard.projecthardlogic.activity.ReportListActivity"
+            android:label="Reports"
+            android:parentActivityName=".activity.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.logic.hard.projecthardlogic.activity.ReportListActivity" />
+        </activity>
+
     </application>
 
 </manifest>

@@ -10,6 +10,6 @@
         android:layout_height="match_parent"
         android:name="com.logic.hard.projecthardlogic.fragment.ReportListFragment"
         tools:layout="@layout/report_list_fragment"
-        android:id="@+id/tweetslist" />
+        android:id="@+id/reportList" />
 
 </LinearLayout>
