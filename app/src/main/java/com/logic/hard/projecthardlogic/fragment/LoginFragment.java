@@ -9,16 +9,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.logic.hard.projecthardlogic.R;
-import com.logic.hard.projecthardlogic.activity.MainActivity;
 import com.logic.hard.projecthardlogic.activity.ReportListActivity;
 
 /**
  * Created by Vincent on 5/18/2016.
  */
 public class LoginFragment extends Fragment implements View.OnClickListener {
+    private ImageView iv_logo;
     private TextView usernameView, passwordView;
     private EditText usernameET, passwordET;
     private Button loginButton;
@@ -36,12 +37,14 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.login_fragment, container, false);
+        iv_logo = (ImageView) view.findViewById(R.id.iv_logo);
         usernameView = (TextView) view.findViewById(R.id.et_username);
         passwordView = (TextView) view.findViewById(R.id.et_password);
         usernameET = (EditText) view.findViewById(R.id.et_username);
         passwordET = (EditText) view.findViewById(R.id.et_password);
         loginButton = (Button) view.findViewById(R.id.btn_login);
         loginButton.setOnClickListener(this);
+
         return view;
     }
 

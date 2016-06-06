@@ -8,4 +8,19 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!-- custom pinkroccade app style -->
+    <style name="Pinkroccade" parent="AppTheme">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#FF008C</item>
+        <item name="colorPrimaryDark">#d40275</item>
+        <item name="colorAccent">@color/colorPrimaryDark</item>
+    </style>
+
+
+    <!--&lt;!&ndash; custom PinkRoccade actionbar style &ndash;&gt;-->
+    <!--<style name="PinkRoccadeActionbar">-->
+        <!--<item name="android:background">#FF008C</item>-->
+    <!--</style>-->
+
+
 </resources>

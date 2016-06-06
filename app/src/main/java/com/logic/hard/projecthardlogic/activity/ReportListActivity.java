@@ -1,8 +1,8 @@
 package com.logic.hard.projecthardlogic.activity;
 
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 import com.logic.hard.projecthardlogic.R;
 import com.logic.hard.projecthardlogic.fragment.ReportListFragment;
@@ -16,7 +16,7 @@ public class ReportListActivity extends AppCompatActivity implements ReportListF
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_report_list);
-        //setContentView(R.layout.activity_main);
+
     }
 
 

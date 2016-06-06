@@ -10,5 +10,8 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Report Title"
         android:id="@+id/tv_report_title"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp" />
+
 </LinearLayout>
