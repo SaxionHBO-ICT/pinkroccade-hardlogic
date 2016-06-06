@@ -4,9 +4,12 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -70,11 +73,27 @@ public class ReportListFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.report_list_fragment, container, false);
+        final View rootView = inflater.inflate(R.layout.report_list_fragment, container, false);
         reportList = (ListView) rootView.findViewById(R.id.reportList);
 
         ReportAdapter adapter = new ReportAdapter(getActivity(), ReportModel.getInstance().getReportList());
         reportList.setAdapter(adapter);
+
+        //set onitemclicklistener for listview
+        reportList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                ReportFragment fragment = new ReportFragment();
+                Bundle b = ReportModel.getInstance().getReportList().get(position).toBundle();
+                fragment.setArguments(b);
+
+                FragmentManager fragmentManager= getActivity().getSupportFragmentManager();
+                fragmentManager.popBackStack();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.reportList, fragment).commit();
+
+            }
+        });
 
 
         Button bt_logout = (Button) rootView.findViewById(R.id.bt_logout);
