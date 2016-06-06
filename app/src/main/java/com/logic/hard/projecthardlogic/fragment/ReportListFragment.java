@@ -88,9 +88,8 @@ public class ReportListFragment extends Fragment {
                 fragment.setArguments(b);
 
                 FragmentManager fragmentManager= getActivity().getSupportFragmentManager();
-                fragmentManager.popBackStack();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.reportList, fragment).commit();
+                fragmentTransaction.replace(R.id.reportList, fragment).addToBackStack(null).commit();
 
             }
         });

@@ -2,6 +2,8 @@ package com.logic.hard.projecthardlogic.activity;
 
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 
 import com.logic.hard.projecthardlogic.R;
@@ -17,7 +19,24 @@ public class ReportListActivity extends AppCompatActivity implements ReportListF
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_report_list);
 
+        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setHomeButtonEnabled(false); // disable the button
+            actionBar.setDisplayHomeAsUpEnabled(false); // remove the left caret
+            actionBar.setDisplayShowHomeEnabled(false); // remove the icon
+        }
+
+        //set fragment in framelayout with id = reportlist
+        ReportListFragment fragment = new ReportListFragment();
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmenttransaction = fragmentManager.beginTransaction();
+        fragmenttransaction.add(R.id.reportList, fragment);
+        fragmenttransaction.addToBackStack("reportlist");
+        fragmenttransaction.commit();
+
+
     }
+
 
 
     @Override
