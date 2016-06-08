@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.logic.hard.projecthardlogic.R;
@@ -79,6 +80,10 @@ public class ReportListFragment extends Fragment {
         ReportAdapter adapter = new ReportAdapter(getActivity(), ReportModel.getInstance().getReportList());
         reportList.setAdapter(adapter);
 
+        TextView tv_welcome = (TextView) rootView.findViewById(R.id.tv_welcome);
+        getActivity().getIntent().getStringExtra("username");
+        tv_welcome.setText("Welkom: "+ getActivity().getIntent().getStringExtra("username"));
+
         //set onitemclicklistener for listview
         reportList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -87,7 +92,7 @@ public class ReportListFragment extends Fragment {
                 Bundle b = ReportModel.getInstance().getReportList().get(position).toBundle();
                 fragment.setArguments(b);
 
-                FragmentManager fragmentManager= getActivity().getSupportFragmentManager();
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.reportList, fragment).addToBackStack(null).commit();
 
