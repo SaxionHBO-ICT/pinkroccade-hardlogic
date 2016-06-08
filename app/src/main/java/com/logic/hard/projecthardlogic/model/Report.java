@@ -7,6 +7,8 @@ import android.os.Bundle;
  */
 public class Report {
     private String title;
+    private String startDate;
+    private String endDate;
     public static final String TITLE = "TITLE";
 
     public Report(String title) {
