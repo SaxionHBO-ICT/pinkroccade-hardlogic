@@ -5,6 +5,9 @@ package com.logic.hard.projecthardlogic.model;
  */
 public class ReportMedewerkerProductiviteit extends Report {
 
+    private String employeeName;
+    private float productivity;
+
     public ReportMedewerkerProductiviteit(String title) {
         super(title);
     }

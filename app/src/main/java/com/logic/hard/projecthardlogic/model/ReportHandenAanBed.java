@@ -5,6 +5,10 @@ package com.logic.hard.projecthardlogic.model;
  */
 public class ReportHandenAanBed extends Report {
 
+    private int numberOfClients;
+    private int numberOfHands;
+    private float averageNumberOfHands;
+
     public ReportHandenAanBed(String title) {
         super(title);
     }
