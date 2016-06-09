@@ -1,18 +1,19 @@
 package com.logic.hard.projecthardlogic.activity;
 
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 
 import com.logic.hard.projecthardlogic.R;
+import com.logic.hard.projecthardlogic.fragment.DatePickerFragment;
 import com.logic.hard.projecthardlogic.fragment.ReportListFragment;
 
 /**
  * Created by Vincent on 5/25/2016.
  */
-public class ReportListActivity extends AppCompatActivity implements ReportListFragment.OnFragmentInteractionListener {
+public class ReportListActivity extends AppCompatActivity implements DatePickerFragment.FragmentInteraction{
+    private OnDateSetListener fragmentCallbacks;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +29,7 @@ public class ReportListActivity extends AppCompatActivity implements ReportListF
 
         //set fragment in framelayout with id = reportlist
         ReportListFragment fragment = new ReportListFragment();
+        fragmentCallbacks = (OnDateSetListener) fragment;
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmenttransaction = fragmentManager.beginTransaction();
         fragmenttransaction.add(R.id.reportList, fragment);
@@ -37,10 +39,13 @@ public class ReportListActivity extends AppCompatActivity implements ReportListF
 
     }
 
-
-
     @Override
-    public void onFragmentInteraction(Uri uri) {
+    public void doSomethingWithDate(int dia, int mes, int anio) {
+        fragmentCallbacks.doSomethingWithDate(dia, mes, anio);
+    }
 
+
+    public interface OnDateSetListener{
+        public void doSomethingWithDate(int dia, int mes, int anio);
     }
 }

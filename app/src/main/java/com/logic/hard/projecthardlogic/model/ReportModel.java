@@ -16,10 +16,9 @@ public class ReportModel {
     private ReportModel() {
         reports = new ArrayList<>();
         int number = 0;
-        while (number < 30) {
-            reports.add(new Report("Report " + number));
-            number ++;
-        }
+
+        reports.add(new Report("Looplijst"));
+        reports.add(new Report("Urentabel"));
     }
 
     public ArrayList<Report> getReportList() {

@@ -3,6 +3,7 @@ package com.logic.hard.projecthardlogic.fragment;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -16,8 +17,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.logic.hard.projecthardlogic.R;
+import com.logic.hard.projecthardlogic.activity.ReportListActivity;
+import com.logic.hard.projecthardlogic.model.Report;
 import com.logic.hard.projecthardlogic.model.ReportModel;
 import com.logic.hard.projecthardlogic.view.ReportAdapter;
+
+import java.util.Calendar;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -27,7 +32,7 @@ import com.logic.hard.projecthardlogic.view.ReportAdapter;
  * Use the {@link ReportListFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ReportListFragment extends Fragment {
+public class ReportListFragment extends Fragment implements ReportListActivity.OnDateSetListener {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -38,6 +43,7 @@ public class ReportListFragment extends Fragment {
     private String mParam2;
 
     private ListView reportList;
+    private TextView tv_date;
 
     private OnFragmentInteractionListener mListener;
 
@@ -82,19 +88,36 @@ public class ReportListFragment extends Fragment {
 
         TextView tv_welcome = (TextView) rootView.findViewById(R.id.tv_welcome);
         getActivity().getIntent().getStringExtra("username");
-        tv_welcome.setText("Welkom: "+ getActivity().getIntent().getStringExtra("username"));
+        tv_welcome.setText("Welkom: " + getActivity().getIntent().getStringExtra("username"));
+
+        tv_date = (TextView) rootView.findViewById(R.id.et_select_date);
+        tv_date.setText(setDate());
+        tv_date.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DialogFragment newFragment = new DatePickerFragment();
+                newFragment.show(getActivity().getSupportFragmentManager(), setDate());
+            }
+        });
 
         //set onitemclicklistener for listview
         reportList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                ReportFragment fragment = new ReportFragment();
-                Bundle b = ReportModel.getInstance().getReportList().get(position).toBundle();
-                fragment.setArguments(b);
+                Report s = ReportModel.getInstance().getReportList().get(position);
 
-                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.reportList, fragment).addToBackStack(null).commit();
+                //TODO to make select work just uncomment line under here
+//                if (s instanceof ReportHandenAanBed || s instanceof ReportMedewerkerProductiviteit) {
+                    ReportFragment fragment = new ReportFragment();
+                    Bundle b = ReportModel.getInstance().getReportList().get(position).toBundle();
+                    fragment.setArguments(b);
+
+                    FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.replace(R.id.reportList, fragment).addToBackStack(null).commit();
+                //TODO and this1
+//                }
+
 
             }
         });
@@ -112,28 +135,36 @@ public class ReportListFragment extends Fragment {
         return rootView;
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
+    private String setDate(){
+        final Calendar c = Calendar.getInstance();
+        int year = c.get(Calendar.YEAR);
+        int month = c.get(Calendar.MONTH);
+        int day = c.get(Calendar.DAY_OF_MONTH);
+        return year +" - "+ month +" - "+ day;
     }
+
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
+//        if (context instanceof OnFragmentInteractionListener) {
+//            mListener = (OnFragmentInteractionListener) context;
+//        } else {
+//            throw new RuntimeException(context.toString()
+//                    + " must implement OnFragmentInteractionListener");
+//        }
     }
 
     @Override
     public void onDetach() {
         super.onDetach();
         mListener = null;
+    }
+
+    @Override
+    public void doSomethingWithDate(int dia, int mes, int anio) {
+        Toast.makeText(getContext(), "Datum ingesteld op: " + dia +" - "+ mes +" - "+ anio, Toast.LENGTH_LONG).show();
+        tv_date.setText(dia +" - "+ mes +" - "+ anio);
     }
 
     /**
