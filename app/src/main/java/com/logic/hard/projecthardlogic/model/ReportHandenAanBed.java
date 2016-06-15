@@ -12,4 +12,5 @@ public class ReportHandenAanBed extends Report {
     public ReportHandenAanBed(String title) {
         super(title);
     }
+
 }
