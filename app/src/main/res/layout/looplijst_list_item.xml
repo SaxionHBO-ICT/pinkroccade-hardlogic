@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Client:"
+        android:id="@+id/tvClient"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Adres"
+        android:id="@+id/tvAdres"
+        android:layout_below="@+id/tvClient"
+        android:layout_alignBottom="@+id/tvClientAdresText" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Product/activiteit"
+        android:id="@+id/tvActiviteit"
+        android:layout_below="@+id/tvAdres"
+        android:layout_alignBottom="@+id/tvActivityText" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sleutel"
+        android:id="@+id/tvSleutel"
+        android:layout_below="@+id/tvActiviteit"
+        android:layout_alignBottom="@+id/tvSleutelText" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="&lt;&lt;client-naam>>"
+        android:id="@+id/tvClientNaamText"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="10dp"
+        android:maxLines="1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="&lt;&lt;Langstraat 123 ABCA21>>"
+        android:id="@+id/tvClientAdresText"
+        android:layout_below="@+id/tvClientNaamText"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="5dp"
+        android:maxLines="2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="&lt;&lt;voetjes wassen>>"
+        android:id="@+id/tvActivityText"
+        android:layout_below="@+id/tvClientAdresText"
+        android:layout_alignStart="@+id/tvClientAdresText"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="5dp"
+        android:gravity="right"
+        android:maxLines="4" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sleutel no3."
+        android:id="@+id/tvSleutelText"
+        android:layout_below="@+id/tvActivityText"
+        android:layout_alignStart="@+id/tvActivityText"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="5dp"
+        android:gravity="right"
+        android:maxLines="1" />
+
+</RelativeLayout>
