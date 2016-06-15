@@ -8,16 +8,19 @@ public class LoopLijstItem {
     private String clientAddress;
     private String activity;
     private String comments;
+    private String key;
 
-    public LoopLijstItem(String clientName, String clientAddress, String activity) {
+    public LoopLijstItem(String clientName, String clientAddress, String activity, String key) {
         this.clientName = clientName;
         this.clientAddress = clientAddress;
         this.activity = activity;
         this.comments = "";
+        this.key = key;
+
     }
 
-    public LoopLijstItem(String clientName, String clientAddress, String activity, String comments) {
-        this(clientName, clientAddress, activity);
+    public LoopLijstItem(String clientName, String clientAddress, String activity,String key, String comments) {
+        this(clientName, clientAddress, activity, key);
         this.comments = comments;
     }
 
@@ -35,5 +38,9 @@ public class LoopLijstItem {
 
     public String getComments() {
         return comments;
+    }
+
+    public String getKey() {
+        return key;
     }
 }

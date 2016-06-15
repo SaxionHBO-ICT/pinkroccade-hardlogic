@@ -13,12 +13,16 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.logic.hard.projecthardlogic.R;
 import com.logic.hard.projecthardlogic.activity.ReportListActivity;
+import com.logic.hard.projecthardlogic.model.LoopLijstModel;
 import com.logic.hard.projecthardlogic.model.Report;
+import com.logic.hard.projecthardlogic.model.ReportHandenAanBed;
+import com.logic.hard.projecthardlogic.model.ReportMedewerkerProductiviteit;
 import com.logic.hard.projecthardlogic.model.ReportModel;
 import com.logic.hard.projecthardlogic.view.ReportAdapter;
 
@@ -106,16 +110,34 @@ public class ReportListFragment extends Fragment implements ReportListActivity.O
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Report s = ReportModel.getInstance().getReportList().get(position);
 
-                //TODO to make select work just uncomment line under here
-//                if (s instanceof ReportHandenAanBed || s instanceof ReportMedewerkerProductiviteit) {
-                    ReportFragment fragment = new ReportFragment();
+                if(s instanceof LoopLijstModel){
+                    //TODO MAKE GO TO LOOPLIJSTVIEW
+                    LooplijstFragment fragment = new LooplijstFragment();
                     Bundle b = ReportModel.getInstance().getReportList().get(position).toBundle();
                     fragment.setArguments(b);
 
                     FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                     fragmentTransaction.replace(R.id.reportList, fragment).addToBackStack(null).commit();
-                //TODO and this1
+                } else if(s instanceof ReportHandenAanBed){
+                    //TODO MAKE GO TO HANDENAANBED
+                } else if(s instanceof ReportMedewerkerProductiviteit){
+                    //TODO MAKE GO TO PRODUCTIVITEIT
+                }
+
+
+
+//                //TODO to make select work just uncomment line under here
+////                if (s instanceof ReportHandenAanBed || s instanceof ReportMedewerkerProductiviteit) {
+//                    ReportFragment fragment = new ReportFragment();
+//                    Bundle b = ReportModel.getInstance().getReportList().get(position).toBundle();
+//                    fragment.setArguments(b);
+//
+//
+//                    FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+//                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+//                    fragmentTransaction.replace(R.id.reportList, fragment).addToBackStack(null).commit();
+//                //TODO and this1
 //                }
 
 

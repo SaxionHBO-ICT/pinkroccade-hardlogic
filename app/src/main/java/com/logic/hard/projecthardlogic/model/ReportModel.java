@@ -19,7 +19,7 @@ public class ReportModel {
 
         reports.add(new ReportHandenAanBed("Handen Aan Bed"));
         reports.add(new ReportMedewerkerProductiviteit("Productiviteit"));
-        reports.add(new ReportLoopLijst("Looplijst"));
+        reports.add(LoopLijstModel.getInstance());
     }
 
     public ArrayList<Report> getReportList() {
