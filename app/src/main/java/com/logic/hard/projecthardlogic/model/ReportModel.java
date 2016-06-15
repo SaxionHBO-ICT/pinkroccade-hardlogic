@@ -17,8 +17,9 @@ public class ReportModel {
         reports = new ArrayList<>();
         int number = 0;
 
-        reports.add(new Report("Looplijst"));
-        reports.add(new Report("Urentabel"));
+        reports.add(new ReportHandenAanBed("Handen Aan Bed"));
+        reports.add(new ReportMedewerkerProductiviteit("Productiviteit"));
+        reports.add(new ReportLoopLijst("Looplijst"));
     }
 
     public ArrayList<Report> getReportList() {

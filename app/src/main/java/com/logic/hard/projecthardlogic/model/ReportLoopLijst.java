@@ -1,11 +1,14 @@
 package com.logic.hard.projecthardlogic.model;
 
+import android.widget.TextView;
+
 import java.util.ArrayList;
 
 /**
  * Created by Vincent on 6/15/2016.
  */
 public class ReportLoopLijst extends Report {
+    private TextView cNaam, cAdress, cActiviteit, cOpmerking;
 
     private ArrayList<LoopLijstItem> items;
 

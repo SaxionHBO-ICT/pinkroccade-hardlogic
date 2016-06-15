@@ -5,8 +5,7 @@ import android.os.Bundle;
 /**
  * Created by Vincent on 5/25/2016.
  */
-public class Report {
-    //extra text for comment dummy
+public abstract class Report {
     private String title;
     private String startDate;
     private String endDate;
