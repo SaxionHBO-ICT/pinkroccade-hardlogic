@@ -121,8 +121,22 @@ public class ReportListFragment extends Fragment implements ReportListActivity.O
                     fragmentTransaction.replace(R.id.reportList, fragment).addToBackStack(null).commit();
                 } else if(s instanceof ReportHandenAanBed){
                     //TODO MAKE GO TO HANDENAANBED
+                    HandenAanBedFragment fragment = new HandenAanBedFragment();
+                    Bundle b = ReportModel.getInstance().getReportList().get(position).toBundle();
+                    fragment.setArguments(b);
+
+                    FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.replace(R.id.reportList, fragment).addToBackStack(null).commit();
                 } else if(s instanceof ReportMedewerkerProductiviteit){
                     //TODO MAKE GO TO PRODUCTIVITEIT
+                    MedewerkerProductiviteitFragment fragment = new MedewerkerProductiviteitFragment();
+                    Bundle b = ReportModel.getInstance().getReportList().get(position).toBundle();
+                    fragment.setArguments(b);
+
+                    FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.replace(R.id.reportList, fragment).addToBackStack(null).commit();
                 }
 
 
