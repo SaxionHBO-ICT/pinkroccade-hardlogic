@@ -9,6 +9,10 @@ public class ReportHandenAanBed extends Report {
     private int numberOfHands;
     private float averageNumberOfHands;
 
+    /**
+     * constructor
+     * @param title the report title
+     */
     public ReportHandenAanBed(String title) {
         super(title);
     }
