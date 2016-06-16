@@ -7,6 +7,7 @@ import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +20,7 @@ import android.widget.Toast;
 
 import com.logic.hard.projecthardlogic.R;
 import com.logic.hard.projecthardlogic.activity.ReportListActivity;
+import com.logic.hard.projecthardlogic.model.LoopLijstItem;
 import com.logic.hard.projecthardlogic.model.LoopLijstModel;
 import com.logic.hard.projecthardlogic.model.Report;
 import com.logic.hard.projecthardlogic.model.ReportHandenAanBed;
@@ -26,6 +28,13 @@ import com.logic.hard.projecthardlogic.model.ReportMedewerkerProductiviteit;
 import com.logic.hard.projecthardlogic.model.ReportModel;
 import com.logic.hard.projecthardlogic.view.ReportAdapter;
 
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserException;
+import org.xmlpull.v1.XmlPullParserFactory;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Calendar;
 
 /**
@@ -37,6 +46,13 @@ import java.util.Calendar;
  * create an instance of this fragment.
  */
 public class ReportListFragment extends Fragment implements ReportListActivity.OnDateSetListener {
+    public static final String ITEMS = "ITEMS";
+    private String naam, adress, product, tijd, opmerking, sleutel;
+    private XmlPullParserFactory xmlFactory;
+    private XmlPullParser parser;
+    public static final int KEY_OK = 0;
+    public static final int KEY_ERROR = -1;
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -110,7 +126,7 @@ public class ReportListFragment extends Fragment implements ReportListActivity.O
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Report s = ReportModel.getInstance().getReportList().get(position);
 
-                if(s instanceof LoopLijstModel){
+                if (s instanceof LoopLijstModel) {
                     //TODO MAKE GO TO LOOPLIJSTVIEW
                     LooplijstFragment fragment = new LooplijstFragment();
                     Bundle b = ReportModel.getInstance().getReportList().get(position).toBundle();
@@ -119,12 +135,11 @@ public class ReportListFragment extends Fragment implements ReportListActivity.O
                     FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                     fragmentTransaction.replace(R.id.reportList, fragment).addToBackStack(null).commit();
-                } else if(s instanceof ReportHandenAanBed){
+                } else if (s instanceof ReportHandenAanBed) {
                     //TODO MAKE GO TO HANDENAANBED
-                } else if(s instanceof ReportMedewerkerProductiviteit){
+                } else if (s instanceof ReportMedewerkerProductiviteit) {
                     //TODO MAKE GO TO PRODUCTIVITEIT
                 }
-
 
 
 //                //TODO to make select work just uncomment line under here
@@ -157,12 +172,12 @@ public class ReportListFragment extends Fragment implements ReportListActivity.O
         return rootView;
     }
 
-    private String setDate(){
+    private String setDate() {
         final Calendar c = Calendar.getInstance();
         int year = c.get(Calendar.YEAR);
         int month = c.get(Calendar.MONTH);
         int day = c.get(Calendar.DAY_OF_MONTH);
-        return year +" - "+ month +" - "+ day;
+        return year + " - " + month + " - " + day;
     }
 
 
@@ -185,8 +200,8 @@ public class ReportListFragment extends Fragment implements ReportListActivity.O
 
     @Override
     public void doSomethingWithDate(int dia, int mes, int anio) {
-        Toast.makeText(getContext(), "Datum ingesteld op: " + dia +" - "+ mes +" - "+ anio, Toast.LENGTH_LONG).show();
-        tv_date.setText(dia +" - "+ mes +" - "+ anio);
+        Toast.makeText(getContext(), "Datum ingesteld op: " + dia + " - " + mes + " - " + anio, Toast.LENGTH_LONG).show();
+        tv_date.setText(dia + " - " + mes + " - " + anio);
     }
 
     /**
@@ -194,7 +209,7 @@ public class ReportListFragment extends Fragment implements ReportListActivity.O
      * fragment to allow an interaction in this fragment to be communicated
      * to the activity and potentially other fragments contained in that
      * activity.
-     * <p>
+     * <p/>
      * See the Android Training lesson <a href=
      * "http://developer.android.com/training/basics/fragments/communicating.html"
      * >Communicating with Other Fragments</a> for more information.

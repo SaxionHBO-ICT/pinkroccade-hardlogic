@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.logic.hard.projecthardlogic.R;
 import com.logic.hard.projecthardlogic.model.LoopLijstItem;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -18,9 +19,9 @@ import java.util.List;
 public class LooplijstAdapter extends ArrayAdapter {
     TextView clientNaam, clientAdress, clientActiviteit, clientSleutel;
     List<LoopLijstItem> items;
-    public LooplijstAdapter(Context context, int resource, List objects) {
+    public LooplijstAdapter(Context context, int resource, List<LoopLijstItem> objects) {
         super(context, resource, objects);
-        items = objects;
+        items = new ArrayList<>(objects);
     }
 
     @Override

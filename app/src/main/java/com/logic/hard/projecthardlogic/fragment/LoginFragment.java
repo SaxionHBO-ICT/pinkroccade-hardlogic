@@ -86,6 +86,8 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
                 String username = usernameET.getText().toString();
                 String password = passwordET.getText().toString();
 
+
+
 //                //TODO new URLconnection
 //                new UrlConnection(getContext()).execute(username, password);
 

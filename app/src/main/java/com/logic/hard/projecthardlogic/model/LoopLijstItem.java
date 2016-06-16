@@ -1,5 +1,7 @@
 package com.logic.hard.projecthardlogic.model;
 
+import android.os.Bundle;
+
 /**
  * Created by Vincent on 6/15/2016.
  */
@@ -9,6 +11,7 @@ public class LoopLijstItem {
     private String activity;
     private String comments;
     private String key;
+    private String time;
 
     public LoopLijstItem(String clientName, String clientAddress, String activity, String key) {
         this.clientName = clientName;
@@ -19,10 +22,11 @@ public class LoopLijstItem {
 
     }
 
-    public LoopLijstItem(String clientName, String clientAddress, String activity,String key, String comments) {
+    public LoopLijstItem(String clientName, String clientAddress, String activity, String key, String comments) {
         this(clientName, clientAddress, activity, key);
         this.comments = comments;
     }
+
 
     public String getClientName() {
         return clientName;
@@ -42,5 +46,40 @@ public class LoopLijstItem {
 
     public String getKey() {
         return key;
+    }
+
+    public Bundle tobundle(){
+        Bundle b = new Bundle();
+        b.putString("NAME", clientName);
+        b.putString("ADRESS", clientAddress);
+        b.putString("ACTIVITY", activity);
+        b.putString("COMMENT", comments);
+        b.putString("KEY", key);
+
+        return b;
+    }
+
+    public void setClientName(String clientName) {
+        this.clientName = clientName;
+    }
+
+    public void setClientAddress(String clientAddress) {
+        this.clientAddress = clientAddress;
+    }
+
+    public void setActivity(String activity) {
+        this.activity = activity;
+    }
+
+    public void setComments(String comments) {
+        this.comments = comments;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
     }
 }
