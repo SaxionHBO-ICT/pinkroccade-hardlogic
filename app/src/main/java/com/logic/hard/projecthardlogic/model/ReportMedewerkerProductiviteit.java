@@ -8,6 +8,10 @@ public class ReportMedewerkerProductiviteit extends Report {
     private String employeeName;
     private float productivity;
 
+    /**
+     * constructor
+     * @param title the report title
+     */
     public ReportMedewerkerProductiviteit(String title) {
         super(title);
     }

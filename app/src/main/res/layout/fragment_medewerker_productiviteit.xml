@@ -30,5 +30,11 @@
         android:text="0/40"
         android:id="@+id/tvProductiviteit" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Terug"
+        android:id="@+id/bt_back"
+        android:layout_gravity="center_horizontal"/>
 
 </LinearLayout>
