@@ -1,12 +1,14 @@
 package com.logic.hard.projecthardlogic.model;
 
 import android.content.Context;
+import android.content.res.XmlResourceParser;
 import android.os.AsyncTask;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.logging.XMLFormatter;
 
 /**
  * Created by Werner on 08-06-16.
@@ -57,7 +59,12 @@ public class UrlConnection extends AsyncTask<String,Void,String> {
                     break;
                 }
                 in.close();
+
+
+
+
                 return sb.toString();
+
 
 
             } catch (Exception e) {

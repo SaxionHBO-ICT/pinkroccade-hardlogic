@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:paddingTop="5dp"
+    android:paddingRight="10dp"
+    android:paddingBottom="5dp">
 
     <ImageView
         android:layout_width="95dp"
@@ -21,7 +24,7 @@
         android:layout_gravity="right"
         android:layout_centerHorizontal="true"
         android:layout_toRightOf="@+id/imageView"
-        android:layout_alignBottom="@+id/textView6"
+        android:layout_alignBottom="@+id/tv_cname"
         android:layout_marginTop="10dp" />
 
     <TextView
@@ -33,7 +36,7 @@
         android:layout_centerHorizontal="true"
         android:layout_toRightOf="@+id/imageView"
         android:layout_below="@+id/textView"
-        android:layout_alignBottom="@+id/textView7" />
+        android:layout_alignBottom="@+id/tv_cadress" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -44,7 +47,7 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/textView2"
         android:layout_toRightOf="@+id/imageView"
-        android:layout_alignBottom="@+id/textView8" />
+        android:layout_alignBottom="@+id/tv_cactiviteit" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -55,7 +58,7 @@
         android:layout_centerHorizontal="true"
         android:layout_toRightOf="@+id/imageView"
         android:layout_below="@+id/textView3"
-        android:layout_alignBottom="@+id/textView9" />
+        android:layout_alignBottom="@+id/tv_csleutel" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -66,13 +69,13 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/textView4"
         android:layout_toRightOf="@+id/imageView"
-        android:layout_alignBottom="@+id/textView10" />
+        android:layout_alignBottom="@+id/tv_copmerking" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="&lt;&lt;client-naam>>"
-        android:id="@+id/textView6"
+        android:id="@+id/tv_cname"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignTop="@+id/imageView"
@@ -84,8 +87,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="&lt;&lt;Langstraat 123 ABCA21>>"
-        android:id="@+id/textView7"
-        android:layout_below="@+id/textView6"
+        android:id="@+id/tv_cadress"
+        android:layout_below="@+id/tv_cname"
         android:layout_alignParentRight="true"
         android:layout_marginRight="5dp"
         android:maxLines="2" />
@@ -94,9 +97,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="&lt;&lt;voetjes wassen>>"
-        android:id="@+id/textView8"
-        android:layout_below="@+id/textView7"
-        android:layout_alignStart="@+id/textView7"
+        android:id="@+id/tv_cactiviteit"
+        android:layout_below="@+id/tv_cadress"
+        android:layout_alignStart="@+id/tv_cadress"
         android:layout_alignParentRight="true"
         android:layout_marginRight="5dp"
         android:gravity="right"
@@ -106,9 +109,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sleutel no3."
-        android:id="@+id/textView9"
-        android:layout_below="@+id/textView8"
-        android:layout_alignStart="@+id/textView8"
+        android:id="@+id/tv_csleutel"
+        android:layout_below="@+id/tv_cactiviteit"
+        android:layout_alignStart="@+id/tv_cactiviteit"
         android:layout_alignParentRight="true"
         android:layout_marginRight="5dp"
         android:gravity="right"
@@ -118,12 +121,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="&lt;&lt;Heel veel opmerkingen voor op 2 regels>>"
-        android:id="@+id/textView10"
-        android:layout_below="@+id/textView9"
-        android:layout_alignStart="@+id/textView9"
+        android:id="@+id/tv_copmerking"
+        android:layout_below="@+id/tv_csleutel"
+        android:layout_alignStart="@+id/tv_csleutel"
         android:layout_alignParentRight="true"
         android:layout_marginRight="5dp"
         android:gravity="right"
         android:maxLines="5" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Terug"
+        android:id="@+id/bt_back"
+        android:layout_gravity="center_horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
