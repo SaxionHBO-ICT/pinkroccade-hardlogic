@@ -1,0 +1,569 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    Name="Looplijst" xmlns="Looplijst" >
+    <Tablix15>
+        <OE_key_Collection>
+            <OE_key>
+                <OE_omschrijving1
+                    OE_omschrijving1="VVCENTRUM - Verpleging Centrum (V&amp;V Basisrooster)" />
+                <Pakket_key1_Collection>
+                    <Pakket_key1>
+                        <OE_omschrijving2
+                            OE_omschrijving2="VVCENTRUM - Verpleging Centrum (V&amp;V Basisrooster)" />
+                        <Pakket_id2 Pakket_id2="1_OCHTEND - Ochtend route 1" />
+                        <Pakket_startdatum_Collection>
+                            <Pakket_startdatum>
+                                <Pakket_startdatum1
+                                    Pakket_startdatum1="woensdag 2 januari 2013 07:00 - 16:40" />
+                                <Medewerker_key_Collection>
+                                    <Medewerker_key>
+                                        <Medewerker_aanspreeknaam1
+                                            Medewerker_aanspreeknaam1="Byrman, M. - 6002" />
+                                        <Medewerker_key1_Collection>
+                                            <Medewerker_key1>
+                                                <Textbox322>
+                                                    <Textbox323>
+                                                        <Textbox324>
+                                                            <Textbox325>
+                                                                <Textbox329>
+                                                                    <Textbox330>
+                                                                        <Textbox331 />
+                                                                    </Textbox330>
+                                                                </Textbox329>
+                                                            </Textbox325>
+                                                        </Textbox324>
+                                                    </Textbox323>
+                                                </Textbox322>
+                                                <Client_id_Collection>
+                                                    <Client_id Startdatumtijd="07:10">
+                                                        <Tijdsduur1 Tijdsduur1="30">
+                                                            <Textbox270
+                                                                Textbox270="59 Velzen, P.A. van">
+                                                                <Tablix16>
+                                                                    <Tablix16
+                                                                        Client_adres="Mariënstein 190"
+                                                                        Client_postcode1="5200 DB DEN BOSCH"
+                                                                        Client_telefoon2="tel: 073-5674839" />
+                                                                    <Client_sleutelprotocol1
+                                                                        Client_sleutelprotocol1="N">
+                                                                        <Product_omschrijving1
+                                                                            Product_omschrijving1="Persoonlijke Verzorging">
+                                                                            <Opmerking_JN
+                                                                                Opmerking_JN="" />
+                                                                        </Product_omschrijving1>
+                                                                    </Client_sleutelprotocol1>
+                                                                </Tablix16>
+                                                            </Textbox270>
+                                                        </Tijdsduur1>
+                                                    </Client_id>
+                                                    <Client_id Startdatumtijd="07:50">
+                                                        <Tijdsduur1 Tijdsduur1="30">
+                                                            <Textbox270
+                                                                Textbox270="73 Velzen-van de Peet, JM van">
+                                                                <Tablix16>
+                                                                    <Tablix16
+                                                                        Client_adres="Oudorperdijkje 106"
+                                                                        Client_postcode1="2700 ZM ZOETERMEER"
+                                                                        Client_telefoon2="tel: 079-5674839" />
+                                                                    <Client_sleutelprotocol1
+                                                                        Client_sleutelprotocol1="N">
+                                                                        <Product_omschrijving1
+                                                                            Product_omschrijving1="Persoonlijke Verzorging">
+                                                                            <Opmerking_JN
+                                                                                Opmerking_JN="" />
+                                                                        </Product_omschrijving1>
+                                                                    </Client_sleutelprotocol1>
+                                                                </Tablix16>
+                                                            </Textbox270>
+                                                        </Tijdsduur1>
+                                                    </Client_id>
+                                                    <Client_id Startdatumtijd="08:30">
+                                                        <Tijdsduur1 Tijdsduur1="20">
+                                                            <Textbox270
+                                                                Textbox270="72 Vendel-Burgering, L.C.">
+                                                                <Tablix16>
+                                                                    <Tablix16
+                                                                        Client_adres="Toscanestraat 26"
+                                                                        Client_postcode1="3430 NG NIEUWEGEIN"
+                                                                        Client_telefoon2="tel: 030-5674839" />
+                                                                    <Client_sleutelprotocol1
+                                                                        Client_sleutelprotocol1="N">
+                                                                        <Product_omschrijving1
+                                                                            Product_omschrijving1="Verpleging">
+                                                                            <Opmerking_JN
+                                                                                Opmerking_JN="" />
+                                                                        </Product_omschrijving1>
+                                                                    </Client_sleutelprotocol1>
+                                                                </Tablix16>
+                                                            </Textbox270>
+                                                        </Tijdsduur1>
+                                                    </Client_id>
+                                                    <Client_id Startdatumtijd="09:30">
+                                                        <Tijdsduur1 Tijdsduur1="60">
+                                                            <Textbox270
+                                                                Textbox270="70 Vennik, C.P.">
+                                                                <Tablix16>
+                                                                    <Tablix16
+                                                                        Client_adres="Molenweg 11"
+                                                                        Client_postcode1="9700 GR GRONINGEN"
+                                                                        Client_telefoon2="tel: 050-5674839" />
+                                                                    <Client_sleutelprotocol1
+                                                                        Client_sleutelprotocol1="N">
+                                                                        <Product_omschrijving1
+                                                                            Product_omschrijving1="Persoonlijke Verzorging">
+                                                                            <Opmerking_JN
+                                                                                Opmerking_JN="" />
+                                                                        </Product_omschrijving1>
+                                                                    </Client_sleutelprotocol1>
+                                                                </Tablix16>
+                                                            </Textbox270>
+                                                        </Tijdsduur1>
+                                                    </Client_id>
+                                                    <Client_id Startdatumtijd="11:00">
+                                                        <Tijdsduur1 Tijdsduur1="45">
+                                                            <Textbox270
+                                                                Textbox270="75 Vermeulen, C.">
+                                                                <Tablix16>
+                                                                    <Tablix16
+                                                                        Client_adres="De Loet 12"
+                                                                        Client_postcode1="8000 ZW ZWOLLE"
+                                                                        Client_telefoon2="tel: 038-5674839" />
+                                                                    <Client_sleutelprotocol1
+                                                                        Client_sleutelprotocol1="N">
+                                                                        <Product_omschrijving1
+                                                                            Product_omschrijving1="Persoonlijke Verzorging">
+                                                                            <Opmerking_JN
+                                                                                Opmerking_JN="" />
+                                                                        </Product_omschrijving1>
+                                                                    </Client_sleutelprotocol1>
+                                                                </Tablix16>
+                                                            </Textbox270>
+                                                        </Tijdsduur1>
+                                                    </Client_id>
+                                                    <Client_id Startdatumtijd="11:55">
+                                                        <Tijdsduur1 Tijdsduur1="30">
+                                                            <Textbox270 Textbox270="60 Verdonk, C.">
+                                                                <Tablix16>
+                                                                    <Tablix16
+                                                                        Client_adres="Noorderkade 304"
+                                                                        Client_postcode1="2490 DH DEN HAAG"
+                                                                        Client_telefoon2="tel: 070-5674839" />
+                                                                    <Client_sleutelprotocol1
+                                                                        Client_sleutelprotocol1="N">
+                                                                        <Product_omschrijving1
+                                                                            Product_omschrijving1="Persoonlijke Verzorging">
+                                                                            <Opmerking_JN
+                                                                                Opmerking_JN="" />
+                                                                        </Product_omschrijving1>
+                                                                    </Client_sleutelprotocol1>
+                                                                </Tablix16>
+                                                            </Textbox270>
+                                                        </Tijdsduur1>
+                                                    </Client_id>
+                                                    <Client_id Startdatumtijd="12:35">
+                                                        <Tijdsduur1 Tijdsduur1="20">
+                                                            <Textbox270
+                                                                Textbox270="71 Verhoeff-van Goor, J.C.">
+                                                                <Tablix16>
+                                                                    <Tablix16
+                                                                        Client_adres="Marienstein 172"
+                                                                        Client_postcode1="5600 EH EINDHOVEN"
+                                                                        Client_telefoon2="tel: 049-5674839" />
+                                                                    <Client_sleutelprotocol1
+                                                                        Client_sleutelprotocol1="N">
+                                                                        <Product_omschrijving1
+                                                                            Product_omschrijving1="Verpleging">
+                                                                            <Opmerking_JN
+                                                                                Opmerking_JN="" />
+                                                                        </Product_omschrijving1>
+                                                                    </Client_sleutelprotocol1>
+                                                                </Tablix16>
+                                                            </Textbox270>
+                                                        </Tijdsduur1>
+                                                    </Client_id>
+                                                </Client_id_Collection>
+                                                <Textbox167>
+                                                    <Textbox168>
+                                                        <Textbox169>
+                                                            <Textbox170>
+                                                                <Textbox171>
+                                                                    <Textbox172>
+                                                                        <Textbox173 />
+                                                                    </Textbox172>
+                                                                </Textbox171>
+                                                            </Textbox170>
+                                                        </Textbox169>
+                                                    </Textbox168>
+                                                </Textbox167>
+                                                <Textbox159>
+                                                    <Textbox160>
+                                                        <Textbox161>
+                                                            <Textbox162>
+                                                                <Textbox163>
+                                                                    <Textbox164>
+                                                                        <Textbox165 />
+                                                                    </Textbox164>
+                                                                </Textbox163>
+                                                            </Textbox162>
+                                                        </Textbox161>
+                                                    </Textbox160>
+                                                </Textbox159>
+                                                <Textbox151>
+                                                    <Textbox152>
+                                                        <Textbox153>
+                                                            <Textbox154>
+                                                                <Textbox155>
+                                                                    <Textbox156>
+                                                                        <Textbox157 />
+                                                                    </Textbox156>
+                                                                </Textbox155>
+                                                            </Textbox154>
+                                                        </Textbox153>
+                                                    </Textbox152>
+                                                </Textbox151>
+                                                <Textbox143>
+                                                    <Textbox144>
+                                                        <Textbox145>
+                                                            <Textbox146>
+                                                                <Textbox147>
+                                                                    <Textbox148>
+                                                                        <Textbox149 />
+                                                                    </Textbox148>
+                                                                </Textbox147>
+                                                            </Textbox146>
+                                                        </Textbox145>
+                                                    </Textbox144>
+                                                </Textbox143>
+                                                <Textbox135>
+                                                    <Textbox136>
+                                                        <Textbox137>
+                                                            <Textbox138>
+                                                                <Textbox139>
+                                                                    <Textbox140>
+                                                                        <Textbox141 />
+                                                                    </Textbox140>
+                                                                </Textbox139>
+                                                            </Textbox138>
+                                                        </Textbox137>
+                                                    </Textbox136>
+                                                </Textbox135>
+                                                <Textbox119>
+                                                    <Textbox120 Textbox120="03:55">
+                                                        <Textbox121 />
+                                                    </Textbox120>
+                                                </Textbox119>
+                                                <Textbox111>
+                                                    <Textbox112 Textbox112="03:55">
+                                                        <Textbox113 />
+                                                    </Textbox112>
+                                                </Textbox111>
+                                                <Textbox103>
+                                                    <Textbox104 Textbox104="00:00">
+                                                        <Textbox105 />
+                                                    </Textbox104>
+                                                </Textbox103>
+                                            </Medewerker_key1>
+                                        </Medewerker_key1_Collection>
+                                        <Textbox127>
+                                            <Textbox128 Textbox128="00:00">
+                                                <Textbox129 />
+                                            </Textbox128>
+                                        </Textbox127>
+                                    </Medewerker_key>
+                                </Medewerker_key_Collection>
+                            </Pakket_startdatum>
+                        </Pakket_startdatum_Collection>
+                    </Pakket_key1>
+                    <Pakket_key1>
+                        <OE_omschrijving2
+                            OE_omschrijving2="VVCENTRUM - Verpleging Centrum (V&amp;V Basisrooster)" />
+                        <Pakket_id2 Pakket_id2="1_OCHTEND - Ochtend route 1" />
+                        <Pakket_startdatum_Collection>
+                            <Pakket_startdatum>
+                                <Pakket_startdatum1
+                                    Pakket_startdatum1="dinsdag 1 januari 2013 07:00 - 16:40" />
+                                <Medewerker_key_Collection>
+                                    <Medewerker_key>
+                                        <Medewerker_aanspreeknaam1
+                                            Medewerker_aanspreeknaam1=" - " />
+                                        <Medewerker_key1_Collection>
+                                            <Medewerker_key1>
+                                                <Textbox322>
+                                                    <Textbox323>
+                                                        <Textbox324>
+                                                            <Textbox325>
+                                                                <Textbox329>
+                                                                    <Textbox330>
+                                                                        <Textbox331 />
+                                                                    </Textbox330>
+                                                                </Textbox329>
+                                                            </Textbox325>
+                                                        </Textbox324>
+                                                    </Textbox323>
+                                                </Textbox322>
+                                                <Client_id_Collection>
+                                                    <Client_id Startdatumtijd="07:10">
+                                                        <Tijdsduur1 Tijdsduur1="30">
+                                                            <Textbox270
+                                                                Textbox270="59 Velzen, P.A. van">
+                                                                <Tablix16>
+                                                                    <Tablix16
+                                                                        Client_adres="Mariënstein 190"
+                                                                        Client_postcode1="5200 DB DEN BOSCH"
+                                                                        Client_telefoon2="tel: 073-5674839" />
+                                                                    <Client_sleutelprotocol1
+                                                                        Client_sleutelprotocol1="N">
+                                                                        <Product_omschrijving1
+                                                                            Product_omschrijving1="Persoonlijke Verzorging">
+                                                                            <Opmerking_JN
+                                                                                Opmerking_JN="" />
+                                                                        </Product_omschrijving1>
+                                                                    </Client_sleutelprotocol1>
+                                                                </Tablix16>
+                                                            </Textbox270>
+                                                        </Tijdsduur1>
+                                                    </Client_id>
+                                                    <Client_id Startdatumtijd="07:50">
+                                                        <Tijdsduur1 Tijdsduur1="30">
+                                                            <Textbox270
+                                                                Textbox270="73 Velzen-van de Peet, JM van">
+                                                                <Tablix16>
+                                                                    <Tablix16
+                                                                        Client_adres="Oudorperdijkje 106"
+                                                                        Client_postcode1="2700 ZM ZOETERMEER"
+                                                                        Client_telefoon2="tel: 079-5674839" />
+                                                                    <Client_sleutelprotocol1
+                                                                        Client_sleutelprotocol1="N">
+                                                                        <Product_omschrijving1
+                                                                            Product_omschrijving1="Persoonlijke Verzorging">
+                                                                            <Opmerking_JN
+                                                                                Opmerking_JN="" />
+                                                                        </Product_omschrijving1>
+                                                                    </Client_sleutelprotocol1>
+                                                                </Tablix16>
+                                                            </Textbox270>
+                                                        </Tijdsduur1>
+                                                    </Client_id>
+                                                    <Client_id Startdatumtijd="08:30">
+                                                        <Tijdsduur1 Tijdsduur1="20">
+                                                            <Textbox270 Textbox270="68 Vlaar, P.">
+                                                                <Tablix16>
+                                                                    <Tablix16
+                                                                        Client_adres="De Wildtlaan 13"
+                                                                        Client_postcode1="5200 DB DEN BOSCH"
+                                                                        Client_telefoon2="tel: 073-5674839" />
+                                                                    <Client_sleutelprotocol1
+                                                                        Client_sleutelprotocol1="N">
+                                                                        <Product_omschrijving1
+                                                                            Product_omschrijving1="Verpleging">
+                                                                            <Opmerking_JN
+                                                                                Opmerking_JN="" />
+                                                                        </Product_omschrijving1>
+                                                                    </Client_sleutelprotocol1>
+                                                                </Tablix16>
+                                                            </Textbox270>
+                                                        </Tijdsduur1>
+                                                    </Client_id>
+                                                    <Client_id Startdatumtijd="09:30">
+                                                        <Tijdsduur1 Tijdsduur1="60">
+                                                            <Textbox270
+                                                                Textbox270="70 Vennik, C.P.">
+                                                                <Tablix16>
+                                                                    <Tablix16
+                                                                        Client_adres="Molenweg 11"
+                                                                        Client_postcode1="9700 GR GRONINGEN"
+                                                                        Client_telefoon2="tel: 050-5674839" />
+                                                                    <Client_sleutelprotocol1
+                                                                        Client_sleutelprotocol1="N">
+                                                                        <Product_omschrijving1
+                                                                            Product_omschrijving1="Persoonlijke Verzorging">
+                                                                            <Opmerking_JN
+                                                                                Opmerking_JN="" />
+                                                                        </Product_omschrijving1>
+                                                                    </Client_sleutelprotocol1>
+                                                                </Tablix16>
+                                                            </Textbox270>
+                                                        </Tijdsduur1>
+                                                    </Client_id>
+                                                    <Client_id Startdatumtijd="10:40">
+                                                        <Tijdsduur1 Tijdsduur1="30">
+                                                            <Textbox270
+                                                                Textbox270="75 Vermeulen, C.">
+                                                                <Tablix16>
+                                                                    <Tablix16
+                                                                        Client_adres="De Loet 12"
+                                                                        Client_postcode1="8000 ZW ZWOLLE"
+                                                                        Client_telefoon2="tel: 038-5674839" />
+                                                                    <Client_sleutelprotocol1
+                                                                        Client_sleutelprotocol1="N">
+                                                                        <Product_omschrijving1
+                                                                            Product_omschrijving1="Verpleging">
+                                                                            <Opmerking_JN
+                                                                                Opmerking_JN="" />
+                                                                        </Product_omschrijving1>
+                                                                    </Client_sleutelprotocol1>
+                                                                </Tablix16>
+                                                            </Textbox270>
+                                                        </Tijdsduur1>
+                                                    </Client_id>
+                                                    <Client_id Startdatumtijd="11:20">
+                                                        <Tijdsduur1 Tijdsduur1="30">
+                                                            <Textbox270
+                                                                Textbox270="59 Velzen, P.A. van">
+                                                                <Tablix16>
+                                                                    <Tablix16
+                                                                        Client_adres="Mariënstein 190"
+                                                                        Client_postcode1="5200 DB DEN BOSCH"
+                                                                        Client_telefoon2="tel: 073-5674839" />
+                                                                    <Client_sleutelprotocol1
+                                                                        Client_sleutelprotocol1="N">
+                                                                        <Product_omschrijving1
+                                                                            Product_omschrijving1="Persoonlijke Verzorging">
+                                                                            <Opmerking_JN
+                                                                                Opmerking_JN="" />
+                                                                        </Product_omschrijving1>
+                                                                    </Client_sleutelprotocol1>
+                                                                </Tablix16>
+                                                            </Textbox270>
+                                                        </Tijdsduur1>
+                                                    </Client_id>
+                                                    <Client_id Startdatumtijd="12:00">
+                                                        <Tijdsduur1 Tijdsduur1="30">
+                                                            <Textbox270 Textbox270="60 Verdonk, C.">
+                                                                <Tablix16>
+                                                                    <Tablix16
+                                                                        Client_adres="Noorderkade 304"
+                                                                        Client_postcode1="2490 DH DEN HAAG"
+                                                                        Client_telefoon2="tel: 070-5674839" />
+                                                                    <Client_sleutelprotocol1
+                                                                        Client_sleutelprotocol1="N">
+                                                                        <Product_omschrijving1
+                                                                            Product_omschrijving1="Persoonlijke Verzorging">
+                                                                            <Opmerking_JN
+                                                                                Opmerking_JN="" />
+                                                                        </Product_omschrijving1>
+                                                                    </Client_sleutelprotocol1>
+                                                                </Tablix16>
+                                                            </Textbox270>
+                                                        </Tijdsduur1>
+                                                    </Client_id>
+                                                    <Client_id Startdatumtijd="12:40">
+                                                        <Tijdsduur1 Tijdsduur1="20">
+                                                            <Textbox270
+                                                                Textbox270="71 Verhoeff-van Goor, J.C.">
+                                                                <Tablix16>
+                                                                    <Tablix16
+                                                                        Client_adres="Marienstein 172"
+                                                                        Client_postcode1="5600 EH EINDHOVEN"
+                                                                        Client_telefoon2="tel: 049-5674839" />
+                                                                    <Client_sleutelprotocol1
+                                                                        Client_sleutelprotocol1="N">
+                                                                        <Product_omschrijving1
+                                                                            Product_omschrijving1="Verpleging">
+                                                                            <Opmerking_JN
+                                                                                Opmerking_JN="" />
+                                                                        </Product_omschrijving1>
+                                                                    </Client_sleutelprotocol1>
+                                                                </Tablix16>
+                                                            </Textbox270>
+                                                        </Tijdsduur1>
+                                                    </Client_id>
+                                                </Client_id_Collection>
+                                                <Textbox167>
+                                                    <Textbox168>
+                                                        <Textbox169>
+                                                            <Textbox170>
+                                                                <Textbox171>
+                                                                    <Textbox172>
+                                                                        <Textbox173 />
+                                                                    </Textbox172>
+                                                                </Textbox171>
+                                                            </Textbox170>
+                                                        </Textbox169>
+                                                    </Textbox168>
+                                                </Textbox167>
+                                                <Textbox159>
+                                                    <Textbox160>
+                                                        <Textbox161>
+                                                            <Textbox162>
+                                                                <Textbox163>
+                                                                    <Textbox164>
+                                                                        <Textbox165 />
+                                                                    </Textbox164>
+                                                                </Textbox163>
+                                                            </Textbox162>
+                                                        </Textbox161>
+                                                    </Textbox160>
+                                                </Textbox159>
+                                                <Textbox151>
+                                                    <Textbox152>
+                                                        <Textbox153>
+                                                            <Textbox154>
+                                                                <Textbox155>
+                                                                    <Textbox156>
+                                                                        <Textbox157 />
+                                                                    </Textbox156>
+                                                                </Textbox155>
+                                                            </Textbox154>
+                                                        </Textbox153>
+                                                    </Textbox152>
+                                                </Textbox151>
+                                                <Textbox143>
+                                                    <Textbox144>
+                                                        <Textbox145>
+                                                            <Textbox146>
+                                                                <Textbox147>
+                                                                    <Textbox148>
+                                                                        <Textbox149 />
+                                                                    </Textbox148>
+                                                                </Textbox147>
+                                                            </Textbox146>
+                                                        </Textbox145>
+                                                    </Textbox144>
+                                                </Textbox143>
+                                                <Textbox135>
+                                                    <Textbox136>
+                                                        <Textbox137>
+                                                            <Textbox138>
+                                                                <Textbox139>
+                                                                    <Textbox140>
+                                                                        <Textbox141 />
+                                                                    </Textbox140>
+                                                                </Textbox139>
+                                                            </Textbox138>
+                                                        </Textbox137>
+                                                    </Textbox136>
+                                                </Textbox135>
+                                                <Textbox119>
+                                                    <Textbox120 Textbox120="04:10">
+                                                        <Textbox121 />
+                                                    </Textbox120>
+                                                </Textbox119>
+                                                <Textbox111>
+                                                    <Textbox112 Textbox112="04:10">
+                                                        <Textbox113 />
+                                                    </Textbox112>
+                                                </Textbox111>
+                                                <Textbox103>
+                                                    <Textbox104 Textbox104="00:00">
+                                                        <Textbox105 />
+                                                    </Textbox104>
+                                                </Textbox103>
+                                            </Medewerker_key1>
+                                        </Medewerker_key1_Collection>
+                                        <Textbox127>
+                                            <Textbox128 Textbox128="00:00">
+                                                <Textbox129 />
+                                            </Textbox128>
+                                        </Textbox127>
+                                    </Medewerker_key>
+                                </Medewerker_key_Collection>
+                            </Pakket_startdatum>
+                        </Pakket_startdatum_Collection>
+                    </Pakket_key1>
+                </Pakket_key1_Collection>
+            </OE_key>
+        </OE_key_Collection>
+    </Tablix15>
+</Report>
