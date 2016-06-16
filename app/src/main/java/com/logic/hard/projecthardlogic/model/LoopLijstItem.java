@@ -8,10 +8,12 @@ import android.os.Bundle;
 public class LoopLijstItem {
     private String clientName;
     private String clientAddress;
+    private String clientPhoneNumber;
     private String activity;
     private String comments;
     private String key;
-    private String time;
+    private String duration;
+    private String startTime;
 
     public LoopLijstItem(String clientName, String clientAddress, String activity, String key) {
         this.clientName = clientName;
@@ -79,7 +81,7 @@ public class LoopLijstItem {
         this.key = key;
     }
 
-    public void setTime(String time) {
-        this.time = time;
+    public void setDuration(String duration) {
+        this.duration = duration;
     }
 }
