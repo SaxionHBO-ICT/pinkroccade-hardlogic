@@ -1,45 +1,31 @@
-package com.logic.hard.projecthardlogic.activity;
+package com.logic.hard.projecthardlogic.controller;
 
-import android.content.res.AssetManager;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import android.content.Context;
 import android.util.Log;
-
-import com.logic.hard.projecthardlogic.R;
-import com.logic.hard.projecthardlogic.controller.XMLReader;
-import com.logic.hard.projecthardlogic.model.LoopLijstItem;
-import com.logic.hard.projecthardlogic.model.LoopLijstModel;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
 
-import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+/**
+ * Created by Vincent on 6/16/2016.
+ */
+public class XMLReader {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        Log.v("xmlTest", "onCreate");
-
-        /*
+    public static void readLoopLijstXML(Context context) {
         XmlPullParserFactory pullParserFactory;
         try {
             pullParserFactory = XmlPullParserFactory.newInstance();
             XmlPullParser parser = pullParserFactory.newPullParser();
 
-            InputStream in_s = getApplicationContext().getAssets().open("test.xml");
+            InputStream in_s = context.getAssets().open("Looplijst.xml");
             parser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES, false);
             parser.setInput(in_s, null);
 
-            parseXML(parser);
+            parseLooplijstXML(parser);
 
         } catch (XmlPullParserException e) {
             Log.v("xmlTest", "XmlPullParserException");
@@ -48,53 +34,10 @@ public class MainActivity extends AppCompatActivity {
             Log.v("xmlTest", "IOException");
             // TODO Auto-generated catch block
             e.printStackTrace();
-        } */
-
-        XMLReader.readLoopLijstXML(getApplicationContext());
-    }
-
-    @Override
-    protected void onResume() {
-        getSupportFragmentManager().popBackStackImmediate();
-        super.onResume();
-    }
-
-    private void parseXML(XmlPullParser parser) throws XmlPullParserException,IOException
-    {
-        int eventType = parser.getEventType();
-        Log.v("xmlTest", "begin");
-
-        while (eventType != XmlPullParser.END_DOCUMENT){
-            String name = null;
-            switch (eventType){
-                case XmlPullParser.START_DOCUMENT:
-                    //products = new ArrayList();
-                    break;
-                case XmlPullParser.START_TAG:
-                    name = parser.getName();
-                    if (name.equals("product")){
-                        Log.v("xmlTest", "product");
-                    } else {
-                        if (name.equals("productname")){
-                            Log.v("xmlTest", parser.nextText());
-                        } else if (name.equals("productcolor")){
-                            Log.v("xmlTest", parser.nextText());
-                        } else if (name.equals("productquantity")){
-                            Log.v("xmlTest", parser.nextText());
-                        }
-                    }
-                    break;
-                case XmlPullParser.END_TAG:
-                    name = parser.getName();
-                    //if (name.equalsIgnoreCase("product") && currentProduct != null){
-                    //    products.add(currentProduct);
-                    //}
-            }
-            eventType = parser.next();
         }
     }
 
-    private void parseLooplijstXML(XmlPullParser parser) throws XmlPullParserException,IOException
+    private static void parseLooplijstXML(XmlPullParser parser) throws XmlPullParserException,IOException
     {
         int eventType = parser.getEventType();
         Log.v("xmlTest", "begin");
@@ -155,17 +98,16 @@ public class MainActivity extends AppCompatActivity {
                     //    products.add(currentProduct);
                     //}
                     if (name.equalsIgnoreCase("Client_id")) {
-                       if (clientName != null) {
-                           Log.v("xmlTest", clientName);
-                           Log.v("xmlTest", clientAddress);
-                           Log.v("xmlTest", clientPhoneNumber);
-                           Log.v("xmlTest", activity);
-                           Log.v("xmlTest", key);
-                           Log.v("xmlTest", comments);
-                           Log.v("xmlTest", startTime);
-                           Log.v("xmlTest", duration);
-                           LoopLijstModel.getInstance().addLoopLijstItem(new LoopLijstItem(clientName, clientAddress, clientPhoneNumber, activity, comments, key, duration, startTime));
-                       }
+                        if (clientName != null) {
+                            Log.v("xmlTest", clientName);
+                            Log.v("xmlTest", clientAddress);
+                            Log.v("xmlTest", clientPhoneNumber);
+                            Log.v("xmlTest", activity);
+                            Log.v("xmlTest", key);
+                            Log.v("xmlTest", comments);
+                            Log.v("xmlTest", startTime);
+                            Log.v("xmlTest", duration);
+                        }
                     }
 
 
@@ -173,5 +115,4 @@ public class MainActivity extends AppCompatActivity {
             eventType = parser.next();
         }
     }
-
 }

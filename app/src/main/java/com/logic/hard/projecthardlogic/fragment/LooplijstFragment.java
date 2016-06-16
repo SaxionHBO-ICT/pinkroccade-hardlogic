@@ -78,8 +78,10 @@ public class LooplijstFragment extends Fragment {
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_looplijst_list, container, false);
 
+        LooplijstAdapter adapter = new LooplijstAdapter(getContext(), R.layout.looplijst_list_item, LoopLijstModel.getInstance().getItems());
+
         lv = (ListView) v.findViewById(R.id.lv_loop_list);
-        lv.setAdapter(new LooplijstAdapter(getContext(), R.layout.looplijst_list_item, LoopLijstModel.getInstance().getItems()));
+        lv.setAdapter(adapter);
 
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
