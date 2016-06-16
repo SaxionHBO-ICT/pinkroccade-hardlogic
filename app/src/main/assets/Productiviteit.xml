@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    Name="Productiviteit" Textbox1="Productiviteit voor Meer, J.G. van der"
+    Textbox2="Periode van 01-12-2015 t/m 31-12-2015"
+    xmlns="Productiviteit" xsi:schemaLocation="Productiviteit http://127.0.0.1/ReportServer?%2FSaxion%2FProductiviteit&amp;rs%3AFormat=XML&amp;rc%3ASchema=True">
+    <GaugePanel1>
+        <Gauge0>
+            <GaugeScale_Collection>
+                <GaugeScale0 MaximumValue="100" MinimumValue="0">
+                    <GaugePointer_Collection>
+                        <GaugePointer0 GaugeInputValue="100.00000000000" />
+                        <GaugePointer1 GaugeInputValue="100.00000000000" />
+                    </GaugePointer_Collection>
+                    <ScaleRange_Collection>
+                        <ScaleRange0 EndValue="" StartValue="0" />
+                    </ScaleRange_Collection>
+                </GaugeScale0>
+            </GaugeScale_Collection>
+        </Gauge0>
+    </GaugePanel1>
+    <GaugePanel2>
+        <Gauge0>
+            <GaugeScale_Collection>
+                <GaugeScale0 MaximumValue="10" MinimumValue="0">
+                    <GaugePointer_Collection>
+                        <GaugePointer0 GaugeInputValue="1.80000000000" />
+                    </GaugePointer_Collection>
+                    <ScaleRange_Collection>
+                        <ScaleRange0 EndValue="" StartValue="60" />
+                        <ScaleRange1 EndValue="" StartValue="0" />
+                    </ScaleRange_Collection>
+                </GaugeScale0>
+            </GaugeScale_Collection>
+        </Gauge0>
+    </GaugePanel2>
+</Report>
