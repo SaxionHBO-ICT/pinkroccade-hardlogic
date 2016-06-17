@@ -15,14 +15,14 @@ public class LoopLijstModel extends Report {
     private LoopLijstModel(String title) {
         super(title);
         items = new ArrayList<>();
-        items.add(new LoopLijstItem("dfsfd", "dsgdfgdfg", "ssdfdgd", "GDsfgdgd"));
-        items.add(new LoopLijstItem("dfsfd", "dsgdfgdfg", "ssdfdgd", "GDsfgdgd"));
-        items.add(new LoopLijstItem("dfsfd", "dsgdfgdfg", "ssdfdgd", "GDsfgdgd"));
-        items.add(new LoopLijstItem("dfsfd", "dsgdfgdfg", "ssdfdgd", "GDsfgdgd"));
-        items.add(new LoopLijstItem("dfsfd", "dsgdfgdfg", "ssdfdgd", "GDsfgdgd"));
-        items.add(new LoopLijstItem("dfsfd", "dsgdfgdfg", "ssdfdgd", "GDsfgdgd"));
-        items.add(new LoopLijstItem("dfsfd", "dsgdfgdfg", "ssdfdgd", "GDsfgdgd"));
-        items.add(new LoopLijstItem("dfsfd", "dsgdfgdfg", "ssdfdgd", "GDsfgdgd"));
+//        items.add(new LoopLijstItem("dfsfd", "dsgdfgdfg", "ssdfdgd", "GDsfgdgd"));
+//        items.add(new LoopLijstItem("dfsfd", "dsgdfgdfg", "ssdfdgd", "GDsfgdgd"));
+//        items.add(new LoopLijstItem("dfsfd", "dsgdfgdfg", "ssdfdgd", "GDsfgdgd"));
+//        items.add(new LoopLijstItem("dfsfd", "dsgdfgdfg", "ssdfdgd", "GDsfgdgd"));
+//        items.add(new LoopLijstItem("dfsfd", "dsgdfgdfg", "ssdfdgd", "GDsfgdgd"));
+//        items.add(new LoopLijstItem("dfsfd", "dsgdfgdfg", "ssdfdgd", "GDsfgdgd"));
+//        items.add(new LoopLijstItem("dfsfd", "dsgdfgdfg", "ssdfdgd", "GDsfgdgd"));
+//        items.add(new LoopLijstItem("dfsfd", "dsgdfgdfg", "ssdfdgd", "GDsfgdgd"));
 
         instance = this;
     }

@@ -20,7 +20,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Adres"
+        android:text="Adres:"
         android:id="@+id/tvAdres"
         android:layout_below="@+id/tvClient"
         android:layout_alignBottom="@+id/tvClientAdresText"
@@ -30,7 +30,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Product/activiteit"
+        android:text="Activiteit:"
         android:id="@+id/tvActiviteit"
         android:layout_below="@+id/tvAdres"
         android:layout_alignBottom="@+id/tvActivityText"
@@ -40,7 +40,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sleutel"
+        android:text="Sleutel:"
         android:id="@+id/tvSleutel"
         android:layout_below="@+id/tvActiviteit"
         android:layout_alignBottom="@+id/tvSleutelText"
@@ -48,50 +48,54 @@
         android:layout_alignTop="@+id/tvSleutelText" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="&lt;&lt;client-naam>>"
         android:id="@+id/tvClientNaamText"
         android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
+        android:layout_alignParentRight="false"
         android:layout_marginRight="5dp"
         android:layout_marginTop="10dp"
-        android:maxLines="1"
-        android:layout_alignLeft="@+id/tvClientAdresText"
-        android:layout_alignParentStart="false"
+        android:maxLines="2"
         android:layout_alignParentEnd="false"
-        android:layout_alignParentLeft="false"
         android:textStyle="bold"
         android:textSize="15dp"
-        android:layout_alignTop="@+id/tvClient" />
+        android:layout_alignTop="@+id/tvClient"
+        android:layout_alignBottom="@+id/tvClient"
+        android:layout_alignStart="@+id/tvClientAdresText"
+        android:layout_marginLeft="5dp" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="&lt;&lt;Langstraat 123 ABCA21>>"
         android:id="@+id/tvClientAdresText"
-        android:layout_below="@+id/tvClientNaamText"
         android:layout_alignParentRight="true"
         android:layout_marginRight="5dp"
-        android:maxLines="2"
+        android:maxLines="5"
         android:textStyle="bold"
-        android:textSize="15dp" />
+        android:textSize="15dp"
+        android:layout_below="@+id/tvClientNaamText"
+        android:layout_marginLeft="5dp"
+        android:minLines="2"
+        android:maxWidth="200dp" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="&lt;&lt;voetjes wassen>>"
         android:id="@+id/tvActivityText"
-        android:layout_below="@+id/tvClientAdresText"
-        android:layout_alignStart="@+id/tvClientAdresText"
         android:layout_alignParentRight="true"
         android:layout_marginRight="5dp"
         android:maxLines="4"
         android:textStyle="bold"
-        android:textSize="15dp" />
+        android:textSize="15dp"
+        android:layout_below="@+id/tvClientAdresText"
+        android:layout_alignStart="@+id/tvClientAdresText"
+        android:layout_marginLeft="5dp" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="&lt;&lt;Sleutel no3.>>"
         android:id="@+id/tvSleutelText"
@@ -102,6 +106,7 @@
         android:maxLines="1"
         android:layout_marginBottom="10dp"
         android:textStyle="bold"
-        android:textSize="15dp" />
+        android:textSize="15dp"
+        android:layout_marginLeft="5dp" />
 
 </RelativeLayout>

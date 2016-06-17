@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         } */
 
         XMLReader.readLoopLijstXML(getApplicationContext());
+        XMLReader.readProductivityXML(getApplicationContext());
     }
 
     @Override
