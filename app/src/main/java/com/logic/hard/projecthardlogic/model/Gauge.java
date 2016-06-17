@@ -15,4 +15,20 @@ public class Gauge {
         this.maxValue = maxValue;
         this.inputValue = inputValue;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public double getMinValue() {
+        return minValue;
+    }
+
+    public double getMaxValue() {
+        return maxValue;
+    }
+
+    public double getInputValue() {
+        return inputValue;
+    }
 }

@@ -21,6 +21,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+    private static boolean notIn = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,8 +51,12 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         } */
 
-        XMLReader.readLoopLijstXML(getApplicationContext());
-        XMLReader.readProductivityXML(getApplicationContext());
+        if(notIn) {
+            XMLReader.readProductivityXML(getApplicationContext());
+            XMLReader.readLoopLijstXML(getApplicationContext());
+            notIn = false;
+        }
+
     }
 
     @Override

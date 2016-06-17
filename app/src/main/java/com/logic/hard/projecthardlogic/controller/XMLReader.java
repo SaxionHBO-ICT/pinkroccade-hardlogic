@@ -8,6 +8,7 @@ import com.logic.hard.projecthardlogic.model.Gauge;
 import com.logic.hard.projecthardlogic.model.LoopLijstItem;
 import com.logic.hard.projecthardlogic.model.LoopLijstModel;
 import com.logic.hard.projecthardlogic.model.Productiviteit;
+import com.logic.hard.projecthardlogic.model.ReportModel;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -15,6 +16,7 @@ import org.xmlpull.v1.XmlPullParserFactory;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 
 /**
  * Created by Vincent on 6/16/2016.
@@ -45,6 +47,7 @@ public class XMLReader {
 
     private static void parseProductiviteitXML(XmlPullParser parser) throws XmlPullParserException, IOException {
         int eventType = parser.getEventType();
+        Productiviteit p = new Productiviteit("Productiviteit");
         Log.v("xmlTest", "begin");
         String name = null;
         String naam = null;
@@ -105,16 +108,15 @@ public class XMLReader {
                         }
                     }
                     break;
-
-                case XmlPullParser.END_DOCUMENT:
-                    Gauge[] e = new Gauge[2];
-                    e[0] = productiviteit;
-                    e[1] = handenAanBed;
-                    Productiviteit.getInstance().setGauges(e);
-                    break;
             }
             eventType = parser.next();
         }
+        Gauge[] e = new Gauge[2];
+        e[0] = productiviteit;
+        e[1] = handenAanBed;
+        p.setGauges(e);
+        ReportModel.getInstance().getReportList().add(p);
+
     }
 
     public static void readLoopLijstXML(Context context) {
@@ -141,6 +143,7 @@ public class XMLReader {
 
     private static void parseLooplijstXML(XmlPullParser parser) throws XmlPullParserException, IOException {
         int eventType = parser.getEventType();
+        ArrayList<LoopLijstItem> items = new ArrayList<>();
         Log.v("xmlTest", "begin");
         String clientName = null;
         String clientAddress = null;
@@ -156,7 +159,6 @@ public class XMLReader {
 
             switch (eventType) {
                 case XmlPullParser.START_DOCUMENT:
-                    //products = new ArrayList();
                     break;
                 case XmlPullParser.START_TAG:
                     name = parser.getName();
@@ -209,13 +211,18 @@ public class XMLReader {
                             Log.v("xmlTest", startTime);
                             Log.v("xmlTest", duration);
 
-                            LoopLijstModel.getInstance().addLoopLijstItem(new LoopLijstItem(clientName, clientAddress, activity, comments));
+                            items.add(new LoopLijstItem(clientName, clientAddress, activity, comments));
+                            Log.d("n", "" + items.size());
                         }
                     }
-
-
+                break;
             }
             eventType = parser.next();
         }
+        LoopLijstModel l = new LoopLijstModel("LoopLijst");
+        for(LoopLijstItem item : items){
+            l.addLoopLijstItem(item);
+        }
+        ReportModel.getInstance().getReportList().add(l);
     }
 }

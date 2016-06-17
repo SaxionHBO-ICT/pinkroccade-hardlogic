@@ -13,16 +13,14 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.logic.hard.projecthardlogic.R;
 import com.logic.hard.projecthardlogic.activity.ReportListActivity;
 import com.logic.hard.projecthardlogic.model.LoopLijstModel;
+import com.logic.hard.projecthardlogic.model.Productiviteit;
 import com.logic.hard.projecthardlogic.model.Report;
-import com.logic.hard.projecthardlogic.model.ReportHandenAanBed;
-import com.logic.hard.projecthardlogic.model.ReportMedewerkerProductiviteit;
 import com.logic.hard.projecthardlogic.model.ReportModel;
 import com.logic.hard.projecthardlogic.view.ReportAdapter;
 
@@ -87,8 +85,7 @@ public class ReportListFragment extends Fragment implements ReportListActivity.O
         final View rootView = inflater.inflate(R.layout.report_list_fragment, container, false);
         reportList = (ListView) rootView.findViewById(R.id.reportList);
 
-        ReportAdapter adapter = new ReportAdapter(getActivity(), ReportModel.getInstance().getReportList());
-        reportList.setAdapter(adapter);
+        reportList.setAdapter(new ReportAdapter(getContext(), ReportModel.getInstance().getReportList()));
 
         TextView tv_welcome = (TextView) rootView.findViewById(R.id.tv_welcome);
         getActivity().getIntent().getStringExtra("username");
@@ -113,25 +110,18 @@ public class ReportListFragment extends Fragment implements ReportListActivity.O
                 if(s instanceof LoopLijstModel){
                     //TODO MAKE GO TO LOOPLIJSTVIEW
                     LooplijstFragment fragment = new LooplijstFragment();
-                    Bundle b = ReportModel.getInstance().getReportList().get(position).toBundle();
+                    Bundle b = new Bundle();
+                    b.putInt("POS", position);
                     fragment.setArguments(b);
 
                     FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                     fragmentTransaction.replace(R.id.reportList, fragment).addToBackStack(null).commit();
-                } else if(s instanceof ReportHandenAanBed){
+                } else if(s instanceof Productiviteit){
                     //TODO MAKE GO TO HANDENAANBED
-                    HandenAanBedFragment fragment = new HandenAanBedFragment();
-                    Bundle b = ReportModel.getInstance().getReportList().get(position).toBundle();
-                    fragment.setArguments(b);
-
-                    FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                    fragmentTransaction.replace(R.id.reportList, fragment).addToBackStack(null).commit();
-                } else if(s instanceof ReportMedewerkerProductiviteit){
-                    //TODO MAKE GO TO PRODUCTIVITEIT
-                    MedewerkerProductiviteitFragment fragment = new MedewerkerProductiviteitFragment();
-                    Bundle b = ReportModel.getInstance().getReportList().get(position).toBundle();
+                    ProductiviteitFragment fragment = new ProductiviteitFragment();
+                    Bundle b = new Bundle();
+                    b.putInt("POS", position);
                     fragment.setArguments(b);
 
                     FragmentManager fragmentManager = getActivity().getSupportFragmentManager();

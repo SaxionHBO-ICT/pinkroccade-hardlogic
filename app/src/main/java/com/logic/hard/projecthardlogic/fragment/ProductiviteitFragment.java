@@ -8,19 +8,28 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.logic.hard.projecthardlogic.R;
+import com.logic.hard.projecthardlogic.model.Gauge;
+import com.logic.hard.projecthardlogic.model.Productiviteit;
+import com.logic.hard.projecthardlogic.model.ReportModel;
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link MedewerkerProductiviteitFragment.OnFragmentInteractionListener} interface
+ * {@link ProductiviteitFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link MedewerkerProductiviteitFragment#newInstance} factory method to
+ * Use the {@link ProductiviteitFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class MedewerkerProductiviteitFragment extends Fragment {
+public class ProductiviteitFragment extends Fragment {
     //private ListView lv;
+    TextView tv_title_productiviteit, tv_title_handenaanbed;
+    TextView tv_productiviteit, tv_handenaanbed;
+    ProgressBar pgb_productiviteit, pgb_handenaanbed;
+
     public final static String key = "REPORTKEY";
     Button bt_back;
 
@@ -35,7 +44,7 @@ public class MedewerkerProductiviteitFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public MedewerkerProductiviteitFragment() {
+    public ProductiviteitFragment() {
         // Required empty public constructor
     }
 
@@ -48,8 +57,8 @@ public class MedewerkerProductiviteitFragment extends Fragment {
      * @return A new instance of fragment LooplijstFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static MedewerkerProductiviteitFragment newInstance(String param1, String param2) {
-        MedewerkerProductiviteitFragment fragment = new MedewerkerProductiviteitFragment();
+    public static ProductiviteitFragment newInstance(String param1, String param2) {
+        ProductiviteitFragment fragment = new ProductiviteitFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -69,10 +78,29 @@ public class MedewerkerProductiviteitFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_medewerker_productiviteit, container, false);
+        View v = inflater.inflate(R.layout.fragment_productiviteit, container, false);
+        Bundle b = getArguments();
+        Productiviteit p = (Productiviteit) ReportModel.getInstance().getReportList().get(b.getInt("POS"));
+        Gauge[] items = p.getGauges();
+        Gauge productiviteit = items[Productiviteit.PRODUCTIVITEIT];
+        Gauge handenaanbed = items[Productiviteit.HANDENAANBED];
 
-        //lv = (ListView) v.findViewById(R.id.lv_loop_list);
-        //lv.setAdapter(new LooplijstAdapter(getContext(), R.layout.looplijst_list_item, LoopLijstModel.getInstance().getItems()));
+        tv_title_handenaanbed = (TextView) v.findViewById(R.id.tv_title_HandenAanBed);
+        tv_title_productiviteit = (TextView) v.findViewById(R.id.tv_title_Productiviteit);
+        tv_handenaanbed = (TextView) v.findViewById(R.id.tvHandenAanBed);
+        tv_productiviteit = (TextView) v.findViewById(R.id.tvProductiviteit);
+        pgb_handenaanbed = (ProgressBar) v.findViewById(R.id.pgbHandenAanBed);
+        pgb_productiviteit = (ProgressBar) v.findViewById(R.id.pgbProductiviteit);
+
+        pgb_handenaanbed.setMax((int) handenaanbed.getMaxValue());
+        pgb_productiviteit.setMax((int) productiviteit.getMaxValue());
+        pgb_handenaanbed.setProgress((int) handenaanbed.getInputValue());
+        pgb_productiviteit.setProgress((int) productiviteit.getInputValue());
+
+        tv_handenaanbed.setText(handenaanbed.getInputValue() +"/"+ handenaanbed.getMaxValue());
+        tv_productiviteit.setText(productiviteit.getInputValue() +"/"+ productiviteit.getMaxValue());
+
+
 
         bt_back = (Button) v.findViewById(R.id.bt_back);
         bt_back.setOnClickListener(new View.OnClickListener() {

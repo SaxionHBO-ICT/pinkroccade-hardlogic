@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.logic.hard.projecthardlogic.R;
 import com.logic.hard.projecthardlogic.model.Report;
+import com.logic.hard.projecthardlogic.model.ReportModel;
 
 import java.util.List;
 
@@ -16,8 +17,9 @@ import java.util.List;
  * Created by Vincent on 5/25/2016.
  */
 public class ReportAdapter extends ArrayAdapter<Report> {
+
     public ReportAdapter(Context context, List<Report> objects) {
-        super(context, -1, objects);
+        super(context, -1, ReportModel.getInstance().getReportList());
     }
 
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -27,8 +29,9 @@ public class ReportAdapter extends ArrayAdapter<Report> {
 
         TextView tvTitle = (TextView) convertView.findViewById(R.id.tv_report_title);
         //tvTitle.setText("Sample");
-
-        tvTitle.setText(getItem(position).getTitle());
+        Report r = ReportModel.getInstance().getReportList().get(position);
+        String t = ReportModel.getInstance().getTitle(position);
+        tvTitle.setText(t);
 
         return convertView;
     }

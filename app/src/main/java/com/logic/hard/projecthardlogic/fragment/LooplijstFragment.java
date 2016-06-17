@@ -16,6 +16,7 @@ import android.widget.ListView;
 
 import com.logic.hard.projecthardlogic.R;
 import com.logic.hard.projecthardlogic.model.LoopLijstModel;
+import com.logic.hard.projecthardlogic.model.ReportModel;
 import com.logic.hard.projecthardlogic.view.LooplijstAdapter;
 
 /**
@@ -27,6 +28,7 @@ import com.logic.hard.projecthardlogic.view.LooplijstAdapter;
  * create an instance of this fragment.
  */
 public class LooplijstFragment extends Fragment {
+    private LoopLijstModel lm;
     private ListView lv;
     public final static String key = "REPORTKEY";
     Button bt_back;
@@ -77,8 +79,10 @@ public class LooplijstFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_looplijst_list, container, false);
+        Bundle b = getArguments();;
+        lm = (LoopLijstModel) ReportModel.getInstance().getReportList().get(b.getInt("POS"));
 
-        LooplijstAdapter adapter = new LooplijstAdapter(getContext(), R.layout.looplijst_list_item, LoopLijstModel.getInstance().getItems());
+        LooplijstAdapter adapter = new LooplijstAdapter(getContext(), R.layout.looplijst_list_item, lm.getItems());
 
         lv = (ListView) v.findViewById(R.id.lv_loop_list);
         lv.setAdapter(adapter);
@@ -87,7 +91,7 @@ public class LooplijstFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Looplijst_itemFragment fragment = new Looplijst_itemFragment();
-                fragment.setArguments(LoopLijstModel.getInstance().getItems().get(position).tobundle());
+                fragment.setArguments(lm.getItems().get(position).tobundle());
 
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();

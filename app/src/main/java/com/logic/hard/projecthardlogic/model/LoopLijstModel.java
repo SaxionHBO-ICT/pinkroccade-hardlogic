@@ -12,7 +12,7 @@ public class LoopLijstModel extends Report {
     private ArrayList<LoopLijstItem> items;
     public static LoopLijstModel instance;
 
-    private LoopLijstModel(String title) {
+    public LoopLijstModel(String title) {
         super(title);
         items = new ArrayList<>();
 //        items.add(new LoopLijstItem("dfsfd", "dsgdfgdfg", "ssdfdgd", "GDsfgdgd"));
@@ -24,7 +24,6 @@ public class LoopLijstModel extends Report {
 //        items.add(new LoopLijstItem("dfsfd", "dsgdfgdfg", "ssdfdgd", "GDsfgdgd"));
 //        items.add(new LoopLijstItem("dfsfd", "dsgdfgdfg", "ssdfdgd", "GDsfgdgd"));
 
-        instance = this;
     }
     public static LoopLijstModel getInstance(){
         if(instance == null){

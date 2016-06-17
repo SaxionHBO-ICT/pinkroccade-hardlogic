@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 
 import com.logic.hard.projecthardlogic.R;
+import com.logic.hard.projecthardlogic.controller.XMLReader;
 import com.logic.hard.projecthardlogic.fragment.DatePickerFragment;
 import com.logic.hard.projecthardlogic.fragment.ReportListFragment;
 
@@ -26,6 +27,7 @@ public class ReportListActivity extends AppCompatActivity implements DatePickerF
             actionBar.setDisplayHomeAsUpEnabled(false); // remove the left caret
             actionBar.setDisplayShowHomeEnabled(false); // remove the icon
         }
+
 
         //set fragment in framelayout with id = reportlist
         ReportListFragment fragment = new ReportListFragment();
