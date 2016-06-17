@@ -3,6 +3,9 @@ package com.logic.hard.projecthardlogic.controller;
 import android.content.Context;
 import android.util.Log;
 
+import com.logic.hard.projecthardlogic.model.LoopLijstItem;
+import com.logic.hard.projecthardlogic.model.LoopLijstModel;
+
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
@@ -107,6 +110,8 @@ public class XMLReader {
                             Log.v("xmlTest", comments);
                             Log.v("xmlTest", startTime);
                             Log.v("xmlTest", duration);
+
+                            LoopLijstModel.getInstance().addLoopLijstItem(new LoopLijstItem(clientName, clientAddress, activity, comments));
                         }
                     }
 
