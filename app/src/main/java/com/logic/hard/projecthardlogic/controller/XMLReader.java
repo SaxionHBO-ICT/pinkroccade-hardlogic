@@ -59,8 +59,6 @@ public class XMLReader {
 
 
         while (eventType != XmlPullParser.END_DOCUMENT) {
-
-
             switch (eventType) {
                 case XmlPullParser.START_DOCUMENT:
                     //products = new ArrayList();
@@ -136,7 +134,6 @@ public class XMLReader {
             e.printStackTrace();
         } catch (IOException e) {
             Log.v("xmlTest", "IOException");
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
@@ -197,9 +194,6 @@ public class XMLReader {
                     break;
                 case XmlPullParser.END_TAG:
                     name = parser.getName();
-                    //if (name.equalsIgnoreCase("product") && currentProduct != null){
-                    //    products.add(currentProduct);
-                    //}
                     if (name.equalsIgnoreCase("Client_id")) {
                         if (clientName != null) {
                             Log.v("xmlTest", clientName);
@@ -215,12 +209,12 @@ public class XMLReader {
                             Log.d("n", "" + items.size());
                         }
                     }
-                break;
+                    break;
             }
             eventType = parser.next();
         }
         LoopLijstModel l = new LoopLijstModel("LoopLijst");
-        for(LoopLijstItem item : items){
+        for (LoopLijstItem item : items) {
             l.addLoopLijstItem(item);
         }
         ReportModel.getInstance().getReportList().add(l);
