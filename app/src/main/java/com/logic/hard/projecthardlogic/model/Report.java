@@ -7,8 +7,6 @@ import android.os.Bundle;
  */
 public abstract class Report {
     private String title;
-    private String startDate;
-    private String endDate;
     public static final String TITLE = "TITLE";
 
     /**
@@ -28,7 +26,8 @@ public abstract class Report {
     }
 
     /**
-     * Creates a bundle so we can pass a string between activities and fragments
+     * basic constructor that creates a bundle so we can pass a string between activities and fragments
+     * Classes that extend this class have a bit more info to send.
      * @return the created bundle
      */
     public Bundle toBundle(){

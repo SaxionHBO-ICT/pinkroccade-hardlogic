@@ -26,58 +26,14 @@ import com.logic.hard.projecthardlogic.view.ReportAdapter;
 
 import java.util.Calendar;
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link ReportListFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link ReportListFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class ReportListFragment extends Fragment implements ReportListActivity.OnDateSetListener {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+public class ReportListFragment extends Fragment implements ReportListActivity.OnDateSetListener {
 
     private ListView reportList;
     private TextView tv_date;
 
-    private OnFragmentInteractionListener mListener;
-
     public ReportListFragment() {
         // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment ReportListFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static ReportListFragment newInstance(String param1, String param2) {
-        ReportListFragment fragment = new ReportListFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
@@ -105,10 +61,10 @@ public class ReportListFragment extends Fragment implements ReportListActivity.O
         reportList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Report s = ReportModel.getInstance().getReportList().get(position);
+                Report s = ReportModel.getInstance().getReportList().get(position); //chosen report
 
+                //If chosen item is LoopLijst do:
                 if(s instanceof LoopLijstModel){
-                    //TODO MAKE GO TO LOOPLIJSTVIEW
                     LooplijstFragment fragment = new LooplijstFragment();
                     Bundle b = new Bundle();
                     b.putInt("POS", position);
@@ -117,8 +73,9 @@ public class ReportListFragment extends Fragment implements ReportListActivity.O
                     FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                     fragmentTransaction.replace(R.id.reportList, fragment).addToBackStack(null).commit();
+
+                //If chosen item is Productiveit do:
                 } else if(s instanceof Productiviteit){
-                    //TODO MAKE GO TO HANDENAANBED
                     ProductiviteitFragment fragment = new ProductiviteitFragment();
                     Bundle b = new Bundle();
                     b.putInt("POS", position);
@@ -128,27 +85,11 @@ public class ReportListFragment extends Fragment implements ReportListActivity.O
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                     fragmentTransaction.replace(R.id.reportList, fragment).addToBackStack(null).commit();
                 }
-
-
-
-//                //TODO to make select work just uncomment line under here
-////                if (s instanceof ReportHandenAanBed || s instanceof ReportMedewerkerProductiviteit) {
-//                    ReportFragment fragment = new ReportFragment();
-//                    Bundle b = ReportModel.getInstance().getReportList().get(position).toBundle();
-//                    fragment.setArguments(b);
-//
-//
-//                    FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-//                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-//                    fragmentTransaction.replace(R.id.reportList, fragment).addToBackStack(null).commit();
-//                //TODO and this1
-//                }
-
-
             }
         });
 
 
+        //Logout button with functionallity
         Button bt_logout = (Button) rootView.findViewById(R.id.bt_logout);
         bt_logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -157,10 +98,10 @@ public class ReportListFragment extends Fragment implements ReportListActivity.O
                 Toast.makeText(getContext(), "Uitgelogd", Toast.LENGTH_SHORT).show();
             }
         });
-
         return rootView;
     }
 
+    //Set current date for date picker
     private String setDate(){
         final Calendar c = Calendar.getInstance();
         int year = c.get(Calendar.YEAR);
@@ -169,42 +110,9 @@ public class ReportListFragment extends Fragment implements ReportListActivity.O
         return year +" - "+ month +" - "+ day;
     }
 
-
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-//        if (context instanceof OnFragmentInteractionListener) {
-//            mListener = (OnFragmentInteractionListener) context;
-//        } else {
-//            throw new RuntimeException(context.toString()
-//                    + " must implement OnFragmentInteractionListener");
-//        }
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mListener = null;
-    }
-
     @Override
     public void doSomethingWithDate(int dia, int mes, int anio) {
         Toast.makeText(getContext(), "Datum ingesteld op: " + dia +" - "+ mes +" - "+ anio, Toast.LENGTH_LONG).show();
         tv_date.setText(dia +" - "+ mes +" - "+ anio);
-    }
-
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
-    public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
     }
 }

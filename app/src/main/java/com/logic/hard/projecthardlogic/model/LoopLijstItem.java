@@ -15,6 +15,12 @@ public class LoopLijstItem {
     private String duration;
     private String startTime;
 
+    /**
+     * @param clientName    name of the client
+     * @param clientAddress adress of the client
+     * @param activity      activities that need to be done at the client
+     * @param comments      (optional) comments
+     */
     public LoopLijstItem(String clientName, String clientAddress, String activity, String comments) {
         this.clientName = clientName;
         this.clientAddress = clientAddress;
@@ -53,7 +59,11 @@ public class LoopLijstItem {
         return key;
     }
 
-    public Bundle tobundle(){
+    /**
+     * Put all client data in a bundle.
+     * @return bundle with client
+     */
+    public Bundle tobundle() {
         Bundle b = new Bundle();
         b.putString("NAME", clientName);
         b.putString("ADRESS", clientAddress);
@@ -68,28 +78,4 @@ public class LoopLijstItem {
     }
 
 
-
-    public void setClientName(String clientName) {
-        this.clientName = clientName;
-    }
-
-    public void setClientAddress(String clientAddress) {
-        this.clientAddress = clientAddress;
-    }
-
-    public void setActivity(String activity) {
-        this.activity = activity;
-    }
-
-    public void setComments(String comments) {
-        this.comments = comments;
-    }
-
-    public void setKey(String key) {
-        this.key = key;
-    }
-
-    public void setDuration(String duration) {
-        this.duration = duration;
-    }
 }

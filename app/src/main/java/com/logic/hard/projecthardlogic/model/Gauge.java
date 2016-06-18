@@ -9,6 +9,13 @@ public class Gauge {
     private double maxValue;
     private double inputValue;
 
+    /**
+     *
+     * @param name Gauge name
+     * @param minValue Minimum value
+     * @param maxValue Maximum value
+     * @param inputValue actual gauge value
+     */
     public Gauge(String name, double minValue, double maxValue, double inputValue) {
         this.name = name;
         this.minValue = minValue;
@@ -18,10 +25,6 @@ public class Gauge {
 
     public String getName() {
         return name;
-    }
-
-    public double getMinValue() {
-        return minValue;
     }
 
     public double getMaxValue() {

@@ -26,7 +26,6 @@ public class LooplijstAdapter extends ArrayAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        //TODO set layout path
         if(convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.looplijst_list_item, parent, false);
 
@@ -34,10 +33,13 @@ public class LooplijstAdapter extends ArrayAdapter {
 
             clientNaam = (TextView) convertView.findViewById(R.id.tvClientNaamText);
             clientNaam.setText(i.getClientName());
+
             clientAdress = (TextView) convertView.findViewById(R.id.tvClientAdresText);
             clientAdress.setText(i.getClientAddress());
+
             clientActiviteit = (TextView) convertView.findViewById(R.id.tvActivityText);
             clientActiviteit.setText(i.getActivity());
+
             clientSleutel = (TextView) convertView.findViewById(R.id.tvSleutelText);
             clientSleutel.setText(i.getKey());
         }

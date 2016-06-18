@@ -13,6 +13,11 @@ import java.util.logging.XMLFormatter;
 /**
  * Created by Werner on 08-06-16.
  */
+
+/**
+ * USED TO CREATE A CONNECTION WITH THE DATABASE,
+ * THIS DOESNT WORK (YET) BECAUSE OF DATABASE PROBLEMS
+ */
 public class UrlConnection extends AsyncTask<String,Void,String> {
     private String uName, uPassword, db_Name, link, data, status;
     private static String USERNAME = "username =";
@@ -23,7 +28,6 @@ public class UrlConnection extends AsyncTask<String,Void,String> {
 
     public UrlConnection(Context context) {
         this.context = context;
-
     }
 
     @Override

@@ -20,10 +20,19 @@ public class ReportModel {
         reports = new ArrayList<>();
     }
 
+    /**
+     * Return the report, given at a position
+     * @param position of the Report in the listview
+     * @return report, connected to position in listview
+     */
     public String getTitle(int position){
         return reports.get(position).getTitle();
     }
 
+    /**
+     * return reports
+     * @return duplicate arraylist, for safety
+     */
     public ArrayList<Report> getReportList() {
         return reports;
     }
