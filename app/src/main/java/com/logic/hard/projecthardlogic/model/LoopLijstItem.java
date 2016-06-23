@@ -16,6 +16,7 @@ public class LoopLijstItem {
     private String startTime;
 
     /**
+     * single LooplijstItem report of 1 client
      * @param clientName    name of the client
      * @param clientAddress adress of the client
      * @param activity      activities that need to be done at the client
@@ -28,6 +29,7 @@ public class LoopLijstItem {
         this.comments = comments;
     }
 
+    //constructor with more info
     public LoopLijstItem(String clientName, String clientAddress, String clientPhoneNumber, String activity, String comments, String key, String duration, String startTime) {
         this.clientName = clientName;
         this.clientAddress = clientAddress;
@@ -39,6 +41,9 @@ public class LoopLijstItem {
         this.startTime = startTime;
     }
 
+    /**
+     * Getters
+     */
     public String getClientName() {
         return clientName;
     }

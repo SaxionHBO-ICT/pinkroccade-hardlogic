@@ -3,14 +3,15 @@ package com.logic.hard.projecthardlogic.model;
 import android.os.Bundle;
 
 /**
- * Created by Vincent on 5/25/2016.
+ * abstract superclass for reports
+ * Productiviteit and looplijstModel extend from this class
  */
 public abstract class Report {
     private String title;
     public static final String TITLE = "TITLE";
 
     /**
-     * Constructor
+     * Basic Constructor
      * @param title the title of the report you're going to create
      */
     public Report(String title) {
@@ -18,8 +19,7 @@ public abstract class Report {
     }
 
     /**
-     * Returns the report title
-     * @return the report title
+     * gettter
      */
     public String getTitle() {
         return title;

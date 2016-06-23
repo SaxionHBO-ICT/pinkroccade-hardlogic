@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Werner on 15-06-16.
+ * Adapter for displaying info in looplijstList (Listview)
  */
 public class LooplijstAdapter extends ArrayAdapter {
     TextView clientNaam, clientAdress, clientActiviteit, clientSleutel;

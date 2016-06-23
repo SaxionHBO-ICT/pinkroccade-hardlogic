@@ -6,12 +6,13 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 
 import com.logic.hard.projecthardlogic.R;
-import com.logic.hard.projecthardlogic.controller.XMLReader;
 import com.logic.hard.projecthardlogic.fragment.DatePickerFragment;
 import com.logic.hard.projecthardlogic.fragment.ReportListFragment;
 
 /**
- * Created by Vincent on 5/25/2016.
+ * Main activity for showing Report menu.
+ * Sends user to every other fragment.
+ * first landing fragment = LooplijstFragment
  */
 public class ReportListActivity extends AppCompatActivity implements DatePickerFragment.FragmentInteraction{
     private OnDateSetListener fragmentCallbacks;
@@ -19,7 +20,7 @@ public class ReportListActivity extends AppCompatActivity implements DatePickerF
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_report_list);
+        setContentView(R.layout.activity_report_list);  //set XML-layout file
 
         android.support.v7.app.ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
@@ -28,9 +29,7 @@ public class ReportListActivity extends AppCompatActivity implements DatePickerF
             actionBar.setDisplayShowHomeEnabled(false); // remove the icon
         }
 
-
-        //set fragment in framelayout with id = reportlist
-        ReportListFragment fragment = new ReportListFragment();
+        ReportListFragment fragment = new ReportListFragment();     //set fragment in framelayout with id = reportlist
         fragmentCallbacks = (OnDateSetListener) fragment;
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmenttransaction = fragmentManager.beginTransaction();
@@ -42,6 +41,12 @@ public class ReportListActivity extends AppCompatActivity implements DatePickerF
 
     }
 
+    /**
+     * Callback for when date is picked in DatePickerFragment
+     * @param dia Day
+     * @param mes Month
+     * @param anio Year
+     */
     @Override
     public void doSomethingWithDate(int dia, int mes, int anio) {
         fragmentCallbacks.doSomethingWithDate(dia, mes, anio);

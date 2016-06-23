@@ -10,7 +10,7 @@ public class Gauge {
     private double inputValue;
 
     /**
-     *
+     * Gauge that is used in Productiviteit report for showing productivity
      * @param name Gauge name
      * @param minValue Minimum value
      * @param maxValue Maximum value
@@ -23,6 +23,9 @@ public class Gauge {
         this.inputValue = inputValue;
     }
 
+    /**
+     * Getters
+     */
     public String getName() {
         return name;
     }

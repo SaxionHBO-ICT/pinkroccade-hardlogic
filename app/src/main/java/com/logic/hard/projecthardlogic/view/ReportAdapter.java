@@ -14,7 +14,7 @@ import com.logic.hard.projecthardlogic.model.ReportModel;
 import java.util.List;
 
 /**
- * Created by Vincent on 5/25/2016.
+ * Adapter for showing reports in Reportlist (listview)
  */
 public class ReportAdapter extends ArrayAdapter<Report> {
 

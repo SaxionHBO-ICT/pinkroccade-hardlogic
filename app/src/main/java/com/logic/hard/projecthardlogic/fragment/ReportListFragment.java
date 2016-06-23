@@ -1,7 +1,5 @@
 package com.logic.hard.projecthardlogic.fragment;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
@@ -26,7 +24,10 @@ import com.logic.hard.projecthardlogic.view.ReportAdapter;
 
 import java.util.Calendar;
 
-
+/**
+ * Fragment used to display ReportList, also added OnClickListener
+ * to function as a menu (in ReportListActivity)
+ */
 public class ReportListFragment extends Fragment implements ReportListActivity.OnDateSetListener {
 
     private ListView reportList;
@@ -36,6 +37,13 @@ public class ReportListFragment extends Fragment implements ReportListActivity.O
         // Required empty public constructor
     }
 
+    /**
+     * Initialize and fill in objects in fragment
+     * @param inflater layoutinflator
+     * @param container viewgroup
+     * @param savedInstanceState savedinstance
+     * @return view with objects filled
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View rootView = inflater.inflate(R.layout.report_list_fragment, container, false);
@@ -101,6 +109,10 @@ public class ReportListFragment extends Fragment implements ReportListActivity.O
         return rootView;
     }
 
+    /**
+     * Set current date for Textview date
+     * @return String with current date
+     */
     //Set current date for date picker
     private String setDate(){
         final Calendar c = Calendar.getInstance();
@@ -110,6 +122,14 @@ public class ReportListFragment extends Fragment implements ReportListActivity.O
         return year +" - "+ month +" - "+ day;
     }
 
+    /**
+     * implemented interface for callbacks from datepickerDialog
+     * set date in TextView for notifing user
+     * send toast message with date that is set
+     * @param dia day
+     * @param mes month
+     * @param anio year
+     */
     @Override
     public void doSomethingWithDate(int dia, int mes, int anio) {
         Toast.makeText(getContext(), "Datum ingesteld op: " + dia +" - "+ mes +" - "+ anio, Toast.LENGTH_LONG).show();

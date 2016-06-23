@@ -20,17 +20,19 @@ import com.logic.hard.projecthardlogic.R;
 import com.logic.hard.projecthardlogic.activity.ReportListActivity;
 
 /**
- * Created by Vincent on 5/18/2016.
+ * Login fragment where user logs in to authorise access
  */
 public class LoginFragment extends Fragment implements View.OnClickListener {
     private static String FILENAME = "Credentials";
+
+    //fragment objects
     private ImageView iv_logo;
     private TextView usernameView, passwordView;
     private EditText usernameET, passwordET;
     private Button loginButton;
     private CheckBox ch_remember;
 
-
+    //Static strings, used for saving user credentials
     public static final String PREFS_NAME = "MyPrefsFile";
     private static final String PREF_USERNAME = "username";
     private static final String PREF_PASSWORD = "password";
@@ -40,10 +42,10 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
 
     /**
      *
-     * @param inflater
-     * @param container
-     * @param savedInstanceState
-     * @return
+     * @param inflater layoutinflator
+     * @param container viewGroup
+     * @param savedInstanceState savedinstance
+     * @return return view with objects in view initialized
      */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -60,42 +62,29 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
 
         get();
 
-
-
         return view;
     }
 
-    /*@Override
-    public void onViewCreated(Bundle savedInstanceState) {
-        loginButton = (Button) getActivity().findViewById(R.id.btn_login);
-        loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String username = usernameET.getText().toString();
-                String password = passwordET.getText().toString();
-                //getContext().startActivity();
-            }
-        });
-    }*/
 
+    /**
+     * OnClicklistener for button press
+     * only used for login button
+     * @param v button view
+     */
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_login:
-                Log.v("BtnClick", "Login Button Clicked");
+//                Log.v("BtnClick", "Login Button Clicked");
                 String username = usernameET.getText().toString();
                 String password = passwordET.getText().toString();
-
-
-
-//                //TODO new URLconnection
-//                new UrlConnection(getContext()).execute(username, password);
-
-
 
                 if(ch_remember.isChecked()){
                     save(username, password);
                 }
+
+                //login succesvol
+                //start intent to reportlistactivity
                 Intent intent = new Intent(getActivity(), ReportListActivity.class);
                 intent.putExtra(PREF_USERNAME, username);
                 startActivity(intent);
@@ -106,11 +95,20 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
         }
     }
 
+    /**
+     * Method used to save credentials using sharedPreferences class
+     * @param uName UserName
+     * @param uPassword UserPassword
+     */
     private void save(String uName, String uPassword){
         getActivity().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE).edit()
                 .putString(PREF_USERNAME, uName)
                 .putString(PREF_PASSWORD, uPassword).commit();
     }
+
+    /**
+     * Method used to retrieve user credentials, if there are any.
+     */
     private void get(){
         SharedPreferences s = getActivity().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
         String userName = s.getString(PREF_USERNAME, null);
@@ -118,6 +116,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
         String userPw = s.getString(PREF_PASSWORD, null);
         passwordET.setText(userPw);
 
+        //if no saved credentials, Send toast message notifing there is no saved user.
         if(userName == null || userPw == null){
             Toast.makeText(getContext(), "geen opgeslagen gebruiker", Toast.LENGTH_SHORT).show();
 

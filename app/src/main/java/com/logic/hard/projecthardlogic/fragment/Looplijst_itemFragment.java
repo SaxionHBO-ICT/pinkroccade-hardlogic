@@ -13,7 +13,9 @@ import com.logic.hard.projecthardlogic.R;
 import com.logic.hard.projecthardlogic.model.LoopLijstItem;
 import com.logic.hard.projecthardlogic.model.LoopLijstModel;
 
-
+/**
+ * Fragment used to show single looplijstItem detail view
+ */
 public class Looplijst_itemFragment extends Fragment {
     private TextView clientNaam, clientAdress, clientActiviteit, clientSleutel, clientopmerking;
     private Button bt_back;
@@ -22,6 +24,13 @@ public class Looplijst_itemFragment extends Fragment {
         // Required empty public constructor
     }
 
+    /**
+     * initialize fragment with objects and set info
+     * @param inflater layoutinflator
+     * @param container viewgroup
+     * @param savedInstanceState savedinstance
+     * @return fragment with objects filled
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -38,7 +47,7 @@ public class Looplijst_itemFragment extends Fragment {
         clientSleutel = (TextView) v.findViewById(R.id.tv_csleutel);
         clientSleutel.setText(b.getString("KEY"));
         clientopmerking = (TextView) v.findViewById(R.id.tv_copmerking);
-        clientopmerking.setText(b.getString("COMMENT"));
+        clientopmerking.setText(b.getString("PHONENUMBER") + "\n" + b.getString("COMMENT"));
 
         bt_back = (Button) v.findViewById(R.id.bt_back);
         bt_back.setOnClickListener(new View.OnClickListener() {

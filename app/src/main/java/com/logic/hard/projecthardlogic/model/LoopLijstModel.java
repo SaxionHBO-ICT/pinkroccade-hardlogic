@@ -3,11 +3,12 @@ package com.logic.hard.projecthardlogic.model;
 import java.util.ArrayList;
 
 /**
- * Created by Vincent on 6/15/2016.
+ * Model for saving all looplijstItems
  */
 public class LoopLijstModel extends Report {
     public static final String ITEMS = "ITEMS";
 
+    //all looplijstItems
     private ArrayList<LoopLijstItem> items;
 
     /**

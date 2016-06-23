@@ -1,7 +1,5 @@
 package com.logic.hard.projecthardlogic.fragment;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -16,15 +14,15 @@ import com.logic.hard.projecthardlogic.model.Gauge;
 import com.logic.hard.projecthardlogic.model.Productiviteit;
 import com.logic.hard.projecthardlogic.model.ReportModel;
 
+
 /**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link ProductiviteitFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link ProductiviteitFragment#newInstance} factory method to
- * create an instance of this fragment.
+ * Fragment for showing Productiviteit Report.
+ * Fragment contains 2 gauges (Progressbars) that will be filled
+ * using Gauges in Productiviteit class
  */
 public class ProductiviteitFragment extends Fragment {
+
+    //Objects in ProductiviteitFragment
     private TextView tv_title_productiviteit, tv_title_handenaanbed;
     private TextView tv_productiviteit, tv_handenaanbed;
     private ProgressBar pgb_productiviteit, pgb_handenaanbed;
@@ -36,6 +34,13 @@ public class ProductiviteitFragment extends Fragment {
         // Required empty public constructor
     }
 
+    /**
+     * initialize fragment with objects and set info
+     * @param inflater layoutinflator
+     * @param container viewgroud
+     * @param savedInstanceState savedinstance
+     * @return view with object filled
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
