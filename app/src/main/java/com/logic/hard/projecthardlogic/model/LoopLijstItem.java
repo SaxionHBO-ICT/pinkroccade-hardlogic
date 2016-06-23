@@ -39,22 +39,42 @@ public class LoopLijstItem {
         this.startTime = startTime;
     }
 
+    /**
+     * returns the client name
+     * @return string clientName
+     */
     public String getClientName() {
         return clientName;
     }
 
+    /**
+     * returns the client's address
+     * @return string clientAddress
+     */
     public String getClientAddress() {
         return clientAddress;
     }
 
+    /**
+     * returns the activity
+     * @return string activity
+     */
     public String getActivity() {
         return activity;
     }
 
+    /**
+     * returns the comments
+     * @return string comments
+     */
     public String getComments() {
         return comments;
     }
 
+    /**
+     * returns key
+     * @return string key
+     */
     public String getKey() {
         return key;
     }

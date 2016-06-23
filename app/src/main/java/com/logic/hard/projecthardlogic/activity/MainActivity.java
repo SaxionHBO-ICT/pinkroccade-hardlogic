@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Log.v("xmlTest", "onCreate");
+        //Log.v("xmlTest", "onCreate");
 
         if(notIn) {
             XMLReader.readProductivityXML(getApplicationContext());

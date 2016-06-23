@@ -7,7 +7,6 @@ import java.util.ArrayList;
  */
 public class LoopLijstModel extends Report {
     public static final String ITEMS = "ITEMS";
-
     private ArrayList<LoopLijstItem> items;
 
     /**
