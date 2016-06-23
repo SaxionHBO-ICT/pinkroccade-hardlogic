@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);     //set XML-layout file
 
-        Log.v("xmlTest", "onCreate");
+        //Log.v("xmlTest", "onCreate");
 
         /**
          * If not already loaded, load in productiviteit and looplijst using XMLReader class
