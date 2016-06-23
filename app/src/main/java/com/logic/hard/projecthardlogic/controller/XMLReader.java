@@ -23,6 +23,10 @@ import java.util.ArrayList;
  */
 public class XMLReader {
 
+    /**
+     * Creates the xmlpullparser and calls parseProductiviteitXML
+     * @param context the application context is needed to open the xml file
+     */
     public static void readProductivityXML(Context context) {
         XmlPullParserFactory pullParserFactory;
         try {
@@ -45,6 +49,12 @@ public class XMLReader {
         }
     }
 
+    /**
+     * parses the Productiviteit.xml to gauge objects
+     * @param parser xml pull parser
+     * @throws XmlPullParserException
+     * @throws IOException
+     */
     private static void parseProductiviteitXML(XmlPullParser parser) throws XmlPullParserException, IOException {
         int eventType = parser.getEventType();
         Productiviteit p = new Productiviteit("Productiviteit");
@@ -117,6 +127,10 @@ public class XMLReader {
 
     }
 
+    /**
+     * Creates the xmlpullparser and calls parseLooplijstXML
+     * @param context the application context is needed to open the xml file
+     */
     public static void readLoopLijstXML(Context context) {
         XmlPullParserFactory pullParserFactory;
         try {
@@ -138,6 +152,12 @@ public class XMLReader {
         }
     }
 
+    /**
+     * parses the Looplijst.xml to looplijstitems
+     * @param parser xml pull parser
+     * @throws XmlPullParserException
+     * @throws IOException
+     */
     private static void parseLooplijstXML(XmlPullParser parser) throws XmlPullParserException, IOException {
         int eventType = parser.getEventType();
         ArrayList<LoopLijstItem> items = new ArrayList<>();
